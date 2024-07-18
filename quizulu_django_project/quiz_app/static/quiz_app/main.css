@@ -1,84 +1,117 @@
+/* Sticky footer position and size
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background: #fafafa;
     color: #333333;
     margin-top: 5rem;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 300px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #444444;
-  }
-  
-  ul {
+}
+
+ul {
     margin: 0;
-  }
-  
-  .bg-steel {
+}
+
+.bg-steel {
     background-color: #603bc5;
-  }
-  
-  .site-header .navbar-nav .nav-link {
+}
+
+.site-header .navbar-nav .nav-link {
     color: #cbd5db;
-  }
-  
-  .site-header .navbar-nav .nav-link:hover {
+}
+
+.site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
-  }
-  
-  .site-header .navbar-nav .nav-link.active {
+}
+
+.site-header .navbar-nav .nav-link.active {
     font-weight: 500;
-  }
-  
-  .content-section {
+}
+
+.content-section {
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
-  }
-  
-  .article-title {
-    color: #444444;
-  }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
-  .article-content {
-    white-space: pre-line;
-  }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
-  .account-img {
+}
+
+.border {
+    padding: 10px;
+}
+
+.account-img {
     height: 125px;
     width: 125px;
     margin-right: 20px;
     margin-bottom: 16px;
-  }
-  
-  .account-heading {
+}
+
+.account-heading {
     font-size: 2.5rem;
-  }
+}
+
+/* Footer CSS Rules*/
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 300px;
+}
+
+/* Taller footer on small screens */
+@media (max-width: 567em) {
+    body {
+        margin-bottom: 700px;
+    }
+
+    .footer {
+        height: 700px;
+    }
+}
+
+/* Sticky footer style and color
+  -------------------------------------------------- */
+footer {
+    padding-top: 30px;
+    background-color: #292c2f;
+    color: #bbb;
+}
+
+footer a {
+    color: #999;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #aaa;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+footer .form-control {
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    color: #d1d2d2;
+    padding: 0.7em 1em;
+}
