@@ -1,11 +1,22 @@
 {% extends "quiz_app/base.html" %}
 {% block content %}
 <div class="border border-dark">
-<h1>Welcome to the Quizulu App!</h1>
-<p>This is a Quiz App with many Quizzes and the possibility to create your own quizzes for your friends and family.</p>
+    <h1>Welcome to the Quizulu App!</h1>
+    <p>This is a Quiz App with many Quizzes and the possibility to create your own quizzes for your friends and family.
+    </p>
 </div>
-<div>
-
+<div class="container gamemode-tiles">
+    <div class="row">
+        <div class="col-sm border border-dark">
+            <p>Multiple Choice</p>
+        </div>
+        <div class="col-sm border border-dark">
+            <p>Free Writing</p>
+        </div>
+        <div class="col-sm border border-dark">
+            <p>With Pictures</p>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
