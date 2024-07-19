@@ -81,6 +81,7 @@ ul {
     padding: 10px;
     border: 1px solid slategrey;
     border-radius: 5px;
+    max-width: 30%;
 }
 
 .form-check {
@@ -90,6 +91,11 @@ ul {
 .form-check-label {
     margin-left: 5px;
 }
+
+textarea.form-control {
+    resize: vertical; 
+    margin-top: 10px; 
+  }
 
 .account-img {
     height: 125px;
