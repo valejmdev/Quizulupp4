@@ -5,3 +5,12 @@ def index(request):
 
 def gamemodes(request):
     return render(request, 'quiz_app/gamemodes.html')
+
+def multiplegamemode(request):
+    return render(request, 'quiz_app/multiple-categories.html')
+
+def freegamemode(request):
+    return render(request, 'quiz_app/free-categories.html')
+
+def picturegamemode(request):
+    return render(request, 'quiz_app/picture-categories.html')
