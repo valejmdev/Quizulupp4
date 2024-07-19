@@ -61,6 +61,15 @@ ul {
     margin-top: 50px;
 }
 
+.categories-spacing {
+    margin: 30px;
+    border: 1px solid slategrey;
+    height: 50px;
+    max-width: 100px;
+    text-align: center;
+    
+}
+
 .account-img {
     height: 125px;
     width: 125px;
