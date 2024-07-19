@@ -1,0 +1,73 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class="border border-dark">
+    <h2>Welcome to the Quiz Creator!</h2>
+    <p>
+        Create your own Quizzes and challenge your friends and familiy or use it to learn for your upcoming exam!
+    </p>
+</div>
+
+<div class="border border-dark quiz-view">
+    <h3 class="border border-box">How to create your own Quiz!</h3>
+    <p>
+        Start by selecting a game mode: multiple choice, free writing, or picture-based quizzes. Choose a category for your quiz from options like Biology, Movies, or Video Games.
+        Next, decide on the number of questions and provide a brief description of your quiz. Use the intuitive interface to craft your questions and answers. Once your quiz is complete, save it to your account.
+    </p>
+
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <label for="quizGamemode">What Gamemode is your Quiz?</label>
+            <div id="quizGamemode" class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gamemode" id="multipleChoice" value="multipleChoice">
+                <label class="form-check-label" for="multipleChoice">
+                  Multiple Choice
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gamemode" id="freeWriting" value="freeWriting">
+                <label class="form-check-label" for="freeWriting">
+                  Free Writing
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gamemode" id="withPictures" value="withPictures">
+                <label class="form-check-label" for="withPictures">
+                  With Pictures
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+<div class="container">
+    <label for="creatorCategory">Choose your Category</label>
+      <select class="form-control" id="creatorCategory" name="creatorCategory">
+        <option value="biology">Biology</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="physics">Physics</option>
+        <option value="geography">Geography</option>
+        <option value="popMusic">Pop Music</option>
+        <option value="rockMusic">Rock Music</option>
+        <option value="electroMusic">Electro Music</option>
+        <option value="classicalMusic">Classical Music</option>
+        <option value="rapMusic">Rap Music</option>
+        <option value="movies">Movies</option>
+        <option value="tvShows">TV Shows</option>
+        <option value="literature">Literature</option>
+        <option value="animeManga">Anime & Manga</option>
+        <option value="computerScience">Computer Science</option>
+        <option value="videoGames">Video Games</option>
+        <option value="sports">Sports</option>
+        <option value="eSports">E-Sports</option>
+        <option value="languages">Languages</option>
+        <option value="history">History</option>
+        <option value="misc">Misc.</option>
+      </select>
+</div>
+
+{% endblock content %}
