@@ -7,6 +7,6 @@ urlpatterns = [
     path('multiple-gamemode/', views.multiplegamemode, name='quiz-multiple-gamemode'),
     path('free-gamemode/', views.freegamemode, name='quiz-free-gamemode'),
     path('picture-gamemode/', views.picturegamemode, name='quiz-picture-gamemode'),
-
+    path('quiz-creator/', views.quizcreator, name='quiz-creator'),
     # Add more URL patterns here
 ]

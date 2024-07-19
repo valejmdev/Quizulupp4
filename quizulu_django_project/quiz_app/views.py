@@ -14,3 +14,6 @@ def freegamemode(request):
 
 def picturegamemode(request):
     return render(request, 'quiz_app/picture-categories.html')
+
+def quizcreator(request):
+    return render(request, 'quiz_app/quiz-creator.html')
