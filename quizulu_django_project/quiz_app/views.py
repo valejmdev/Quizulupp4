@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Quiz
+from .forms import QuizForm
 
 def index(request):
     return render(request, 'quiz_app/index.html')
@@ -15,5 +17,15 @@ def freegamemode(request):
 def picturegamemode(request):
     return render(request, 'quiz_app/picture-categories.html')
 
-def quizcreator(request):
-    return render(request, 'quiz_app/quiz-creator.html')
+def quiz_creator(request):
+    if request.method == 'POST':
+        form = QuizForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('quiz_success')  # need to add the quiz list
+    else:
+        form = QuizForm()
+    return render(request, 'quiz_app/quiz-creator.html', {'form': form})
+
+def success(request):
+    return render(request, 'quiz_app/success.html')
