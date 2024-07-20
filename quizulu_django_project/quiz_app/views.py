@@ -22,7 +22,7 @@ def quiz_creator(request):
         form = QuizForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('quiz_success')  # need to add the quiz list
+            return redirect('success')  # need to add the quiz list
     else:
         form = QuizForm()
     return render(request, 'quiz_app/quiz-creator.html', {'form': form})

@@ -14,9 +14,22 @@
       Next, decide on the number of questions and provide a brief description of your quiz. Use the intuitive interface to craft your questions and answers. Once your quiz is complete, save it to your account.
   </p>
 
-  <!-- Need to Update this action to my server endpoint -->
   <form action="{% url 'quiz-creator' %}" method="POST">
     {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -33,6 +46,11 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        <label for="id_title">Give your Quiz a title</label>
+        {{ form.title }}
     </div>
 
     <div class="container">
