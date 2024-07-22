@@ -14,7 +14,7 @@
       Next, decide on the number of questions and provide a brief description of your quiz. Use the intuitive interface to craft your questions and answers. Once your quiz is complete, save it to your account.
   </p>
 
-  <form action="{% url 'quiz-creator' %}" method="POST">
+  <form action="{% url 'redirect-creator-mode' %}" method="POST">
     {% csrf_token %}
     {% if form.errors %}
     <div class="alert alert-danger">
@@ -29,7 +29,7 @@
             {% endfor %}
         </ul>
     </div>
-{% endif %}
+    {% endif %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
