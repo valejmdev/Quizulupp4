@@ -4,13 +4,8 @@ from .models import Quiz
 class QuizForm(forms.ModelForm):
     class Meta:
         model = Quiz
-        fields = ['title', 'gamemode', 'category', 'number_of_questions', 'description']
+        fields = ['title', 'category', 'description']
         widgets = {
-            'gamemode': forms.RadioSelect(choices=[
-                ('multipleChoice', 'Multiple Choice'),
-                ('freeWriting', 'Free Writing'),
-                ('withPictures', 'With Pictures')
-            ]),
             'category': forms.Select(choices=[
                 ('biology', 'Biology'),
                 ('chemistry', 'Chemistry'),
@@ -32,6 +27,5 @@ class QuizForm(forms.ModelForm):
                 ('languages', 'Languages'),
                 ('history', 'History'),
                 ('misc', 'Misc.')
-            ]),
-            'number_of_questions': forms.Select(choices=[(i, str(i)) for i in range(2, 11)])
+            ])
         }
