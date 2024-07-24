@@ -1,0 +1,24 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class="border border-dark">
+    <h2>Select a Category</h2>
+    <p>Choose a category to start a random quiz from that category.</p>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+      {% for category in categories %}
+      <div class="col-md-3 col-sm-6 col-12 categories-spacing">
+        <a href="{% url 'random-quiz' category %}">{{ category }}</a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+<div class="border border-dark">
+    <p>
+        Can't find something that fits your vibe? <br>Then create your own Quizzes and challenge your friends and family or use it to learn for your upcoming exam!
+    </p>
+    <a href="{% url 'quiz-creator' %}">Create your own Quiz!</a>
+</div>
+{% endblock content %}
