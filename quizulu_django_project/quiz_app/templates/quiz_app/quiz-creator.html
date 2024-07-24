@@ -10,11 +10,11 @@
 <div class="border border-dark quiz-view">
   <h3 class="border border-box">How to create your own Quiz!</h3>
   <p>
-      Start by selecting a game mode: multiple choice, free writing, or picture-based quizzes. Choose a category for your quiz from options like Biology, Movies, or Video Games.
-      Next, decide on the number of questions and provide a brief description of your quiz. Use the intuitive interface to craft your questions and answers. Once your quiz is complete, save it to your account.
+      Start by giving your Quiz a title and selecting a category for your quiz from options like Biology, Movies, or Video Games.
+      Next, provide a brief description of your quiz and create the Questions and Answers on the following page. Once your quiz is complete, save it to your account.
   </p>
 
-  <form action="{% url 'redirect-creator-mode' %}" method="POST">
+  <form action="{% url 'quiz-creator' %}" method="POST">
     {% csrf_token %}
     {% if form.errors %}
     <div class="alert alert-danger">
@@ -30,23 +30,6 @@
         </ul>
     </div>
     {% endif %}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <label for="id_gamemode">What Gamemode is your Quiz?</label>
-                <div id="quizGamemode" class="form-group">
-                    {% for radio in form.gamemode %}
-                        <div class="form-check">
-                            {{ radio.tag }}
-                            <label class="form-check-label" for="{{ radio.id_for_label }}">
-                                {{ radio.choice_label }}
-                            </label>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <label for="id_title">Give your Quiz a title</label>
@@ -56,11 +39,6 @@
     <div class="container">
         <label for="id_category">Choose your Category</label>
         {{ form.category }}
-    </div>
-
-    <div class="container">
-        <label for="id_number_of_questions">How many Questions does your Quiz have</label>
-        {{ form.number_of_questions }}
     </div>
 
     <div class="container">
