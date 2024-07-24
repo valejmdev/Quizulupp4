@@ -1,0 +1,17 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class="border border-dark">
+    <h2>{{ quiz.title }}</h2>
+    <p><strong>Category:</strong> {{ quiz.category }}</p>
+    <p><strong>Description:</strong> {{ quiz.description }}</p>
+    <a href="{% url 'question-creator' pk=quiz.id %}" class="btn btn-primary">Start Quiz</a>
+</div>
+<div class="mt-4">
+    <h3>Questions</h3>
+    <ul>
+        {% for question in quiz.questions_set.all %}
+        <li>{{ question.question }} - {{ question.answer }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
