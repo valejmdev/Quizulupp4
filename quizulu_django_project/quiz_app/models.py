@@ -35,3 +35,12 @@ class Quiz(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Questions(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.CharField(max_length=300)
+    correct_answer = models.CharField(max_length=300)
+    answer1 = models.CharField(max_length=300)
+    answer2 = models.CharField(max_length=300)
+    answer3 = models.CharField(max_length=300)
