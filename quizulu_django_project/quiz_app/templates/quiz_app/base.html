@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarToggle">
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{% url 'quiz-index' %}">Home</a>
-                <a class="nav-item nav-link" href="{% url 'quiz-gamemodes' %}">Gamemodes</a>
+                <a class="nav-item nav-link" href="{% url 'categories' %}">Categories</a>
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
@@ -65,8 +65,8 @@
                     <div class="row">
                         <div class="col-6">
                             <ul class="list-unstyled">
-                                <li><a href="">Homepage</a></li>
-                                <li><a href="">Gamemodes</a></li>
+                                <li><a href="{% url 'quiz-index' %}">Homepage</a></li>
+                                <li><a href="{% url 'categories' %}">Categories</a></li>
                             </ul>
                         </div>
                     </div>
