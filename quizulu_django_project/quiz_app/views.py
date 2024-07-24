@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Quiz
+from .models import Quiz, Questions
 from .forms import QuizForm
+from django.views.generic.edit import CreateView
 
 def index(request):
     return render(request, 'quiz_app/index.html')
@@ -50,3 +51,9 @@ def redirect_creator_mode(request):
         elif game_mode == 'withPictures':
             return redirect('quiz-picture-creator')
     return redirect('quiz-creator')
+
+
+class QuestionCreateView(CreateView):
+    model = Questions
+    fields = ['question']
+        
