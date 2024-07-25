@@ -2,16 +2,19 @@
 {% block content %}
 <div class="border border-dark">
     <h2>{{ quiz.title }}</h2>
-    <p><strong>Category:</strong> {{ quiz.category }}</p>
-    <p><strong>Description:</strong> {{ quiz.description }}</p>
-    <a href="{% url 'question-creator' pk=quiz.id %}" class="btn btn-primary">Start Quiz</a>
-</div>
-<div class="mt-4">
-    <h3>Questions</h3>
+    <p>{{ quiz.description }}</p>
+    <!-- Add code to display the questions and answers -->
     <ul>
         {% for question in quiz.questions_set.all %}
-        <li>{{ question.question }} - {{ question.answer }}</li>
+        <li>{{ question.question }}</li>
+        <ul>
+            <li>{{ question.correct_answer }}</li>
+            <li>{{ question.answer1 }}</li>
+            <li>{{ question.answer2 }}</li>
+            <li>{{ question.answer3 }}</li>
+        </ul>
         {% endfor %}
     </ul>
+    <a href="{% url 'play_quiz' quiz.id %}" class="btn btn-primary">Play Quiz</a>
 </div>
 {% endblock content %}
