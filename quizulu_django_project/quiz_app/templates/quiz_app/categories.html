@@ -5,15 +5,14 @@
     <p>Choose a category to start a random quiz from that category.</p>
 </div>
 
-<div class="container">
-    <div class="row justify-content-center">
-      {% for category in categories %}
-      <div class="col-md-3 col-sm-6 col-12 categories-spacing">
-        <a href="{% url 'random-quiz' category %}">{{ category }}</a>
-      </div>
-      {% endfor %}
-    </div>
+<div class="border border-dark">
+    <ul>
+        {% for category in categories %}
+        <li><a href="{% url 'random-quiz' category %}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
 </div>
+
 
 <div class="border border-dark">
     <p>
