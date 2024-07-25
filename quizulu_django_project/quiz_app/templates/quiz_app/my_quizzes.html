@@ -1,0 +1,20 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class="border border-dark">
+    <h2>My Quizzes</h2>
+    <ul>
+        {% for quiz in quizzes %}
+        <li>
+            <h3>{{ quiz.title }}</h3>
+            <p>{{ quiz.description }}</p>
+            <a href="{% url 'quiz-detail' quiz.id %}" class="btn btn-primary">Play</a>
+            <a href="{% url 'quiz-update' quiz.id %}" class="btn btn-secondary">Update</a>
+            <form method="post" action="{% url 'quiz-delete' quiz.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
