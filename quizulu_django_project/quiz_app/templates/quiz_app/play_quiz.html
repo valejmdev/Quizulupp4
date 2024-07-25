@@ -1,0 +1,21 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class="quiz-container">
+    <h2>{{ quiz.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="question-container">
+            <div class="answer-grid">
+                {% for answer in answers %}
+                <div class="answer-box">
+                    <input type="radio" name="answer" value="{{ answer }}">
+                    <label>{{ answer }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" name="submit_answer">Submit Answer</button>
+            <button type="submit" name="next_question">Next Question</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
