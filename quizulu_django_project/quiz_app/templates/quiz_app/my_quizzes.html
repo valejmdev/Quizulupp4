@@ -2,19 +2,40 @@
 {% block content %}
 <div class="border border-dark">
     <h2>My Quizzes</h2>
-    <ul>
+    <ul class="list-group">
         {% for quiz in quizzes %}
-        <li>
-            <h3>{{ quiz.title }}</h3>
-            <p>{{ quiz.description }}</p>
-            <a href="{% url 'quiz-detail' quiz.id %}" class="btn btn-primary">Play</a>
-            <a href="{% url 'quiz-update' quiz.id %}" class="btn btn-secondary">Update</a>
-            <form method="post" action="{% url 'quiz-delete' quiz.id %}" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h3>{{ quiz.title }}</h3>
+                <p>{{ quiz.description }}</p>
+                <a href="{% url 'quiz-detail' quiz.id %}" class="btn btn-primary w-100 mb-2">Play</a>
+                <a href="{% url 'quiz-update' quiz.id %}" class="btn btn-secondary w-100 mb-2">Update</a>
+                <form method="post" action="{% url 'quiz-delete' quiz.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger w-100 mb-2">Delete</button>
+                </form>
+                <button type="button" id="modal-btn-test" class="btn btn-info w-100" data-toggle="modal" data-target="#linkModal" data-quiz-id="{{ quiz.id }}">Generate Link</button>
+            </div>
         </li>
         {% endfor %}
     </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkModalLabel">Share Your Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="quiz-link" class="form-control" readonly>
+                <button type="button" id="copy-link" class="btn btn-primary mt-2">Copy Link</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}
