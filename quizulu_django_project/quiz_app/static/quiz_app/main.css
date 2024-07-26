@@ -101,7 +101,7 @@ textarea.form-control {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.answer-button.selected {
+.answer-button.active {
     background-color: #007bff; /* Bootstrap primary color */
     color: white;
 }
