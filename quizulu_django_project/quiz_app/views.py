@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
-from .models import Quiz, Questions
+from .models import Quiz, Question, UserQuizProgress
 from .forms import QuizForm
 import logging
 import random
@@ -29,30 +29,87 @@ def quiz_detail(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     return render(request, 'quiz_app/quiz_detail.html', {'quiz': quiz})
 
+@login_required
 def play_quiz(request, quiz_id):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
-    questions = quiz.questions_set.all()
-    current_question = 0
-    answers = []  # Define the answers variable here
-    if request.method == 'POST':
-        if 'next_question' in request.POST:
-            current_question += 1
-        elif 'submit_answer' in request.POST:
-            # Check the answer and update the user's score
-            pass
-            answers = [questions[current_question].correct_answer, questions[current_question].answer1, questions[current_question].answer2, questions[current_question].answer3]
-            random.shuffle(answers)
-    else:
-        answers = [questions[current_question].correct_answer, questions[current_question].answer1, questions[current_question].answer2, questions[current_question].answer3]
-        random.shuffle(answers)
-    return render(request, 'quiz_app/play_quiz.html', {'quiz': quiz, 'questions': questions, 'current_question': current_question, 'answers': answers})
+    questions = list(quiz.question_set.all())
 
+    if not questions:
+        return render(request, 'quiz_app/empty_quiz.html', {'quiz': quiz})  # Handle empty quiz scenario
+
+    progress, created = UserQuizProgress.objects.get_or_create(user=request.user, quiz=quiz)
+    current_question_index = progress.current_question_index if not created else 0
+    
+    if current_question_index >= len(questions):
+        return redirect('quiz_results', quiz_id=quiz_id)
+
+    current_question = questions[current_question_index]
+
+    if request.method == 'POST':
+        if 'submit_answer' in request.POST:
+            selected_answer = request.POST.get('answer')
+            if selected_answer == current_question.correct_answer:
+                progress.score += 1
+
+            # Move to next question
+            progress.current_question_index += 1
+
+            if progress.current_question_index >= len(questions):
+                progress.save()
+                return redirect('quiz_results', quiz_id=quiz_id)
+            else:
+                progress.save()
+                return redirect('play_quiz', quiz_id=quiz_id)
+
+    # Gather answers
+    answers = [current_question.correct_answer]
+    if current_question.incorrect_answer1:
+        answers.append(current_question.incorrect_answer1)
+    if current_question.incorrect_answer2:
+        answers.append(current_question.incorrect_answer2)
+    if current_question.incorrect_answer3:
+        answers.append(current_question.incorrect_answer3)
+
+    random.shuffle(answers)
+
+    context = {
+        'quiz': quiz,
+        'question': current_question.question_text,
+        'answers': answers,
+        'question_number': current_question_index + 1,
+        'total_questions': len(questions),
+    }
+    return render(request, 'quiz_app/play_quiz.html', context)
+
+@login_required
+def quiz_results(request, quiz_id):
+    quiz = get_object_or_404(Quiz, pk=quiz_id)
+    progress = get_object_or_404(UserQuizProgress, user=request.user, quiz=quiz)
+    
+    context = {
+        'quiz': quiz,
+        'score': progress.score,
+        'total_questions': quiz.question_set.count(),
+    }
+    return render(request, 'quiz_app/quiz_results.html', context)
 
 @login_required
 def my_quizzes(request):
     quizzes = Quiz.objects.filter(created_by=request.user)
     return render(request, 'quiz_app/my_quizzes.html', {'quizzes': quizzes})
 
+@login_required
+class QuizCreateView(CreateView):
+    model = Quiz
+    form_class = QuizForm
+    template_name = 'quiz_app/quiz_form.html'
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user 
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('question-creator', kwargs={'pk': self.object.pk})
 
 @login_required
 class QuizUpdateView(UpdateView):
@@ -81,7 +138,7 @@ class QuizDeleteView(DeleteView):
 
 @login_required
 class QuestionUpdateView(UpdateView):
-    model = Questions
+    model = Question
     fields = ['question', 'correct_answer', 'answer1', 'answer2', 'answer3']
     template_name = 'quiz_app/question_form.html'
 
@@ -91,30 +148,16 @@ class QuestionUpdateView(UpdateView):
 
 @login_required
 class QuestionDeleteView(DeleteView):
-    model = Questions
+    model = Question
     template_name = 'quiz_app/question_confirm_delete.html'
 
     def get_success_url(self):
         return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.quiz.pk})
 
-@login_required
-def quiz_creator(request):
-    if request.method == 'POST':
-        form = QuizForm(request.POST)
-        if form.is_valid():
-            quiz = form.save()
-            return redirect('question-creator', pk=quiz.pk)
-    else:
-        form = QuizForm()
-    return render(request, 'quiz_app/quiz-creator.html', {'form': form})
 
-def success(request):
-    return render(request, 'quiz_app/success.html')
-
-@login_required
 class QuestionCreateView(CreateView):
-    model = Questions
-    fields = ['question', 'correct_answer', 'answer1', 'answer2', 'answer3']
+    model = Question
+    fields = ['question_text', 'correct_answer', 'incorrect_answer1', 'incorrect_answer2', 'incorrect_answer3']
     template_name = 'quiz_app/question_form.html'
 
     def get_initial(self):
@@ -126,7 +169,7 @@ class QuestionCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         quiz = get_object_or_404(Quiz, pk=self.kwargs['pk'])
         context['quiz'] = quiz
-        context['questions_count'] = quiz.questions_set.count()
+        context['question_count'] = quiz.question_set.count()
         return context
 
     def form_valid(self, form):
