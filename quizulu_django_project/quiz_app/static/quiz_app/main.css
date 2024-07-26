@@ -97,6 +97,15 @@ textarea.form-control {
     margin-top: 10px; 
   }
 
+  .answer-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.answer-button.selected {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
 .account-img {
     height: 125px;
     width: 125px;
