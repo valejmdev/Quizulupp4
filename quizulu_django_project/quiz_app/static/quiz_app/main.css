@@ -57,6 +57,24 @@ ul {
     margin: 10px;
 }
 
+.row {
+    margin: 0;
+}
+
+.col-md-8, .col-md-4 {
+    padding: 15px;
+}
+
+.content-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.list-group-item-light {
+    background-color: #f9f9f9;
+}
+
 .gamemode-tiles {
     margin-top: 50px;
 }
@@ -82,6 +100,40 @@ ul {
     border: 1px solid slategrey;
     border-radius: 5px;
     max-width: 30%;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.card-text {
+    margin: 1rem;
+}
+
+.my-quiz-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 350px; /* Adjust based on content size */
+}
+
+.card-body {
+    text-align: center; 
+}
+
+.btn-primary {
+    width: 100%;
 }
 
 .form-check {
