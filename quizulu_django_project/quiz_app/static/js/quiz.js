@@ -1,33 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.answer-button');
-    const submitButton = document.querySelector('.btn-primary');
-    
-    let selectedAnswer = null;
-    
+    const hiddenInput = document.getElementById('selected-answer');
+    const form = document.querySelector('form');
+
+    // Add click event listeners to all answer buttons
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove 'selected' class from all buttons
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            
-            // Add 'selected' class to the clicked button
-            this.classList.add('selected');
-            
-            // Store the selected answer
-            selectedAnswer = this.getAttribute('data-value');
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to the clicked button
+            this.classList.add('active');
+
+            // Set the value of the hidden input to the selected answer
+            hiddenInput.value = this.getAttribute('data-value');
         });
     });
-    
-    // Ensure selected answer is sent with form submission
-    document.querySelector('form').addEventListener('submit', function(event) {
-        if (!selectedAnswer) {
-            event.preventDefault();
-            alert('Please select an answer.');
-        } else {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'answer';
-            input.value = selectedAnswer;
-            this.appendChild(input);
+
+    // Prevent form submission if no answer is selected
+    form.addEventListener('submit', function(event) {
+        if (hiddenInput.value === '') {
+            event.preventDefault(); // Stop form submission
+            alert('Please select an answer before submitting.');
         }
     });
 });
