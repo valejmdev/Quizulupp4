@@ -1,21 +1,25 @@
 {% extends "quiz_app/base.html" %}
+{% load static %}
 {% block content %}
-<div class="quiz-container">
-    <h2>{{ quiz.title }}</h2>
-    <form method="post">
+<div class="container mt-4">
+    <h2 class="text-center">{{ quiz.title }}</h2>
+    <p class="text-center">Question {{ question_number }} of {{ total_questions }}</p>
+    <form method="post" class="mt-4">
         {% csrf_token %}
-        <div class="question-container">
-            <div class="answer-grid">
+        <div class="text-center">
+            <p>{{ question }}</p>
+            <div class="row">
                 {% for answer in answers %}
-                <div class="answer-box">
-                    <input type="radio" name="answer" value="{{ answer }}">
-                    <label>{{ answer }}</label>
+                <div class="col-6 mb-2">
+                    <button type="button" class="btn btn-outline-primary w-100 answer-button" data-value="{{ answer }}">
+                        {{ answer }}
+                    </button>
                 </div>
                 {% endfor %}
             </div>
-            <button type="submit" name="submit_answer">Submit Answer</button>
-            <button type="submit" name="next_question">Next Question</button>
+            <button type="submit" name="submit_answer" class="btn btn-primary mt-3">Submit Answer</button>
         </div>
     </form>
 </div>
+<script src="{% static 'js/quiz.js' %}"></script>
 {% endblock content %}
