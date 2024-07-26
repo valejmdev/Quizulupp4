@@ -5,26 +5,30 @@ from django.contrib.auth.models import User
 class Quiz(models.Model):
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=50, choices=[
-        ('biology', 'Biology'),
-        ('chemistry', 'Chemistry'),
-        ('physics', 'Physics'),
-        ('geography', 'Geography'),
-        ('popMusic', 'Pop Music'),
-        ('rockMusic', 'Rock Music'),
-        ('electroMusic', 'Electro Music'),
-        ('classicalMusic', 'Classical Music'),
-        ('rapMusic', 'Rap Music'),
-        ('movies', 'Movies'),
-        ('tvShows', 'TV Shows'),
-        ('literature', 'Literature'),
-        ('animeManga', 'Anime & Manga'),
-        ('computerScience', 'Computer Science'),
-        ('videoGames', 'Video Games'),
+        ('general', 'General Knowledge'),
+        ('books', 'Entertainment: Books'),
+        ('film', 'Entertainment: Film'),
+        ('music', 'Entertainment: Music'),
+        ('musicals', 'Entertainment: Musicals & Theatres'),
+        ('television', 'Entertainment: Television'),
+        ('videoGames', 'Entertainment: Video Games'),
+        ('boardGames', 'Entertainment: Board Games'),
+        ('nature', 'Science & Nature'),
+        ('computers', 'Science: Computers'),
+        ('mathematics', 'Science: Mathematics'),
+        ('mythology', 'Mythology'),
         ('sports', 'Sports'),
-        ('eSports', 'E-Sports'),
-        ('languages', 'Languages'),
+        ('geography', 'Geography'),
         ('history', 'History'),
-        ('misc', 'Misc.')
+        ('politics', 'Politics'),
+        ('art', 'Art'),
+        ('celebrities', 'Celebrities'),
+        ('animals', 'Animals'),
+        ('vehicles', 'Vehicles'),
+        ('comics', 'Entertainment: Comics'),
+        ('gadgets', 'Science: Gadgets'),
+        ('anime', 'Entertainment: Japanese Anime & Manga'),
+        ('cartoons', 'Entertainment: Cartoon & Animations')
     ])
     description = models.TextField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -35,8 +39,11 @@ class Quiz(models.Model):
 
 class Questions(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    question = models.CharField(max_length=300)
+    question_text = models.CharField(max_length=300)
     correct_answer = models.CharField(max_length=300)
-    answer1 = models.CharField(max_length=300)
-    answer2 = models.CharField(max_length=300)
-    answer3 = models.CharField(max_length=300)
+    incorrect_answer1 = models.CharField(max_length=300)
+    incorrect_answer2 = models.CharField(max_length=300)
+    incorrect_answer3 = models.CharField(max_length=300, null=True, blank=True)
+
+    def __str__(self):
+        return self.question_text
