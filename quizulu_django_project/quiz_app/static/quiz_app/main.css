@@ -1,13 +1,11 @@
-/* Sticky footer position and size
--------------------------------------------------- */
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-    background: #fafafa;
-    color: #333333;
+    background-color: #fafafa;
+    color: #4A4453;
     margin-top: 5rem;
     margin-bottom: 300px;
 }
@@ -26,7 +24,7 @@ ul {
 }
 
 .bg-steel {
-    background-color: #603bc5;
+    background-color: #A37DE5;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -75,8 +73,8 @@ ul {
     background-color: #f9f9f9;
 }
 
-.gamemode-tiles {
-    margin-top: 50px;
+.categories-title {
+    text-align: center;
 }
 
 .categories-spacing {
@@ -85,14 +83,12 @@ ul {
     height: 50px;
     max-width: 100px;
     text-align: center;
-    
 }
 
 .quiz-view {
     max-height: 60%;
     width: 100%
 }
-
 
 #creatorCategory {
     margin: 20px 0;
@@ -105,6 +101,7 @@ ul {
 .card {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    height: 100%;
 }
 
 .card:hover {
@@ -125,11 +122,32 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 350px; /* Adjust based on content size */
+    max-height: 350px; 
 }
 
 .card-body {
     text-align: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.card-body .btn:last-child {
+    margin-bottom: 0;  
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body #quiz-link {
+    width: 100%;
 }
 
 .btn-primary {
@@ -147,42 +165,136 @@ ul {
 textarea.form-control {
     resize: vertical; 
     margin-top: 10px; 
-  }
+}
 
-  .answer-button {
+.answer-button {
     transition: background-color 0.3s, color 0.3s;
 }
 
 .answer-button.active {
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff; 
     color: white;
 }
 
+/* Ensure uniform spacing for form inputs */
+.form-row .form-control {
+    margin-bottom: 15px;
+}
+
+/* Add padding to the content-section for better spacing */
+.content-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/* Style the profile image */
 .account-img {
-    height: 125px;
-    width: 125px;
+    height: 150px; 
+    width: 150px;
     margin-right: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 20px; 
 }
 
+/* Adjust heading font size */
 .account-heading {
-    font-size: 2.5rem;
+    font-size: 2rem; 
+    margin-bottom: 10px;
 }
 
-/* Footer CSS Rules*/
+/* Ensure form fields and buttons are responsive and spaced well */
+.btn-outline-info {
+    margin-top: 10px;
+}
 
+@media (max-width: 1200px) {
+    body {
+        margin-top: 4rem;
+        margin-bottom: 250px;
+    }
+    .categories-spacing {
+        max-width: 90px;
+    }
+    .content-section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        margin-top: 3rem;
+        margin-bottom: 200px;
+    }
+    .categories-spacing {
+        max-width: 80px;
+    }
+    .content-section {
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .card-text {
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin-top: 2rem;
+        margin-bottom: 150px;
+    }
+    .categories-spacing {
+        max-width: 70px;
+    }
+    .content-section {
+        padding: 5px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .card-text {
+        margin: 0.25rem;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .form-row .col-md-6 {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        margin-top: 1rem;
+        margin-bottom: 100px;
+    }
+    .categories-spacing {
+        max-width: 60px;
+    }
+    .content-section {
+        padding: 2px;
+    }
+    .card-title {
+        font-size: 0.9rem;
+    }
+    .card-text {
+        margin: 0.1rem;
+    }
+}
+
+/* Footer CSS Rules */
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
 
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Set the fixed height of the footer here */
     height: 300px;
 }
 
-/* Taller footer on small screens */
-@media (max-width: 567em) {
+@media (max-width: 768px) {
     body {
         margin-bottom: 700px;
     }
@@ -192,8 +304,7 @@ textarea.form-control {
     }
 }
 
-/* Sticky footer style and color
-  -------------------------------------------------- */
+/* Sticky footer style and color */
 footer {
     padding-top: 30px;
     background-color: #292c2f;
