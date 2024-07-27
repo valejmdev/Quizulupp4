@@ -3,7 +3,6 @@
 <div class="border border-dark">
     <h2>{{ quiz.title }}</h2>
     <p>{{ quiz.description }}</p>
-    <!-- Add code to display the questions and answers -->
     <ul>
         {% for question in quiz.questions_set.all %}
         <li>{{ question.question }}</li>
