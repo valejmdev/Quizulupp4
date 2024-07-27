@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from .models import Quiz, Question, UserQuizProgress
 from .forms import QuizForm
 import logging
@@ -102,7 +103,7 @@ class MyQuizCreateView(LoginRequiredMixin, CreateView):
     template_name = 'quiz_app/quiz_form.html'
 
     def form_valid(self, form):
-        form.instance.created_by = self.request.user 
+        form.instance.created_by = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -113,26 +114,38 @@ class QuizUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['title', 'category', 'description']
     template_name = 'quiz_app/quiz_form.html'
 
-    def form_valid(self, form):
-        logging.info('Form is valid. Quiz is being updated.')
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        logging.error('Form is invalid. Errors: %s', form.errors)
-        return super().form_invalid(form)
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.created_by != self.request.user:
+            raise PermissionDenied("You do not have permission to edit this quiz.")
+        return obj
 
     def get_success_url(self):
-        return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.pk})
+        return reverse_lazy('question-creator', kwargs={'pk': self.object.pk})
 
 class QuizDeleteView(LoginRequiredMixin, DeleteView):
     model = Quiz
     template_name = 'quiz_app/quiz_confirm_delete.html'
-    success_url = reverse_lazy('quiz-index')
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.created_by != self.request.user:
+            raise PermissionDenied("You do not have permission to delete this quiz.")
+        return obj
+
+    def get_success_url(self):
+        return reverse_lazy('quiz-index')
 
 class QuestionUpdateView(LoginRequiredMixin, UpdateView):
     model = Question
     fields = ['question', 'correct_answer', 'answer1', 'answer2', 'answer3']
     template_name = 'quiz_app/question_form.html'
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.quiz.created_by != self.request.user:
+            raise PermissionDenied("You do not have permission to edit this question.")
+        return obj
 
     def get_success_url(self):
         return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.quiz.pk})
@@ -140,6 +153,12 @@ class QuestionUpdateView(LoginRequiredMixin, UpdateView):
 class QuestionDeleteView(LoginRequiredMixin, DeleteView):
     model = Question
     template_name = 'quiz_app/question_confirm_delete.html'
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj.quiz.created_by != self.request.user:
+            raise PermissionDenied("You do not have permission to delete this question.")
+        return obj
 
     def get_success_url(self):
         return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.quiz.pk})
