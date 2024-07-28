@@ -1,1 +1,1 @@
-web: gunicorn quizulu_django_project.quizulu_django_project.wsgi:application --workers 3
+web: cd quizulu_django_project && gunicorn quizulu_django_project.wsgi:application --workers 3
