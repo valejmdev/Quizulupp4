@@ -1,1 +1,1 @@
-web: gunicorn quizulu_django_project.quizulu_django_project.wsgi:application
+web: gunicorn quizulu_django_project.quizulu_django_project.wsgi:application --workers 3
