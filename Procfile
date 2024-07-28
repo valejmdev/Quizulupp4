@@ -1,1 +1,1 @@
-web: gunicorn quizulu_django_project.wsgi --log-file -
+web: gunicorn quizulu_django_project.wsgi
