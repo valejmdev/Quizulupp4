@@ -19,3 +19,4 @@ PyQt5-Qt5==5.15.14
 PyQt5_sip==12.15.0
 silx==2.1.0
 sqlparse==0.5.1
+whitenoise==6.7.0
