@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-valejmdev-quizulupp4-297d69blsys.ws.codeinstitute-ide.net', 
     '127.0.0.1',
-    'localhost'
+    'localhost',
+    'quizulupp4.herokuapp.com'
 ]
 
 # Application definition
