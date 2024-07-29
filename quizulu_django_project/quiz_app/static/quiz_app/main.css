@@ -6,8 +6,8 @@ html {
 body {
     background-color: #fafafa;
     color: #4A4453;
-    margin-top: 5rem;
-    margin-bottom: 300px;
+    margin-top: 1rem;
+    margin-bottom: 100px;
 }
 
 h1,
@@ -41,7 +41,7 @@ ul {
 
 .content-section {
     background: #ffffff;
-    padding: 10px 20px;
+    padding: 2px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
@@ -56,13 +56,12 @@ ul {
 
 .border-box,
 .content-section {
-    flex: 1; /* Makes them grow equally */
+    flex: 1;
     border: 1px solid #000;
-    padding: 20px;
+    padding: 2px;
     margin-bottom: 20px;
 }
 
-/* Additional margin between boxes */
 .margin-between {
     margin-bottom: 20px;
 }
@@ -143,12 +142,6 @@ ul {
     padding: 15px;
 }
 
-.content-section {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-}
-
 .list-group-item-light {
     background-color: #f9f9f9;
 }
@@ -161,13 +154,13 @@ ul {
     margin: 30px;
     border: 1px solid slategrey;
     height: 50px;
-    max-width: 100px;
+    max-width: 60px;
     text-align: center;
 }
 
 .quiz-view {
     max-height: 60%;
-    width: 100%
+    width: 100%;
 }
 
 #creatorCategory {
@@ -175,7 +168,7 @@ ul {
     padding: 10px;
     border: 1px solid slategrey;
     border-radius: 5px;
-    max-width: 30%;
+    max-width: 100%;
 }
 
 .card {
@@ -190,12 +183,12 @@ ul {
 
 .card-title {
     text-transform: uppercase;
-    font-size: 1.25rem;
-    margin: 1rem;
+    font-size: 0.9rem;
+    margin: 0.1rem;
 }
 
 .card-text {
-    margin: 1rem;
+    margin: 0.1rem;
 }
 
 .my-quiz-card-body {
@@ -256,12 +249,10 @@ textarea.form-control {
     color: white;
 }
 
-/* Ensure uniform spacing for form inputs */
 .form-row .form-control {
     margin-bottom: 15px;
 }
 
-/* Add padding to the content-section for better spacing */
 .content-section {
     padding: 20px;
     border: 1px solid #ddd;
@@ -269,7 +260,6 @@ textarea.form-control {
     background-color: #ffffff;
 }
 
-/* Style the profile image */
 .account-img {
     height: 150px; 
     width: 150px;
@@ -277,50 +267,16 @@ textarea.form-control {
     margin-bottom: 20px; 
 }
 
-/* Adjust heading font size */
 .account-heading {
     font-size: 2rem; 
     margin-bottom: 10px;
 }
 
-/* Ensure form fields and buttons are responsive and spaced well */
 .btn-outline-info {
     margin-top: 10px;
 }
 
-@media (max-width: 1200px) {
-    body {
-        margin-top: 4rem;
-        margin-bottom: 250px;
-    }
-    .categories-spacing {
-        max-width: 90px;
-    }
-    .content-section {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 992px) {
-    body {
-        margin-top: 3rem;
-        margin-bottom: 200px;
-    }
-    .categories-spacing {
-        max-width: 80px;
-    }
-    .content-section {
-        padding: 10px;
-    }
-    .card-title {
-        font-size: 1.1rem;
-    }
-    .card-text {
-        margin: 0.5rem;
-    }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 576px) {
     body {
         margin-top: 2rem;
         margin-bottom: 150px;
@@ -345,22 +301,49 @@ textarea.form-control {
     }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 768px) {
     body {
-        margin-top: 1rem;
-        margin-bottom: 100px;
+        margin-top: 3rem;
+        margin-bottom: 200px;
     }
     .categories-spacing {
-        max-width: 60px;
+        max-width: 80px;
     }
     .content-section {
-        padding: 2px;
+        padding: 10px;
     }
     .card-title {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     .card-text {
-        margin: 0.1rem;
+        margin: 0.5rem;
+    }
+
+    .footer {
+        height: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        margin-top: 4rem;
+        margin-bottom: 250px;
+    }
+    .categories-spacing {
+        max-width: 90px;
+    }
+    .content-section {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        margin-top: 5rem;
+        margin-bottom: 300px;
+    }
+    .categories-spacing {
+        max-width: 100px;
     }
 }
 
@@ -378,13 +361,11 @@ textarea.form-control {
     body {
         margin-bottom: 700px;
     }
-
     .footer {
         height: 200px;
     }
 }
 
-/* Sticky footer style and color */
 footer {
     padding-top: 30px;
     background-color: #292c2f;
