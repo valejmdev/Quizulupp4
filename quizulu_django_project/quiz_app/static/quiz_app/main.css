@@ -39,6 +39,10 @@ ul {
     font-weight: 500;
 }
 
+.logout-spacing {
+    padding-top: .5rem;
+}
+
 .content-section {
     background: #ffffff;
     padding: 2px;
@@ -299,6 +303,11 @@ textarea.form-control {
     .form-row .col-md-6 {
         margin-bottom: 15px;
     }
+    .answer-buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -367,21 +376,6 @@ textarea.form-control {
     bottom: 0;
     width: 100%;
     height: 300px;
-}
-
-@media (max-width: 768px) {
-    body {
-        margin-bottom: 700px;
-    }
-    .footer {
-        height: 200px;
-    }
-
-    .answer-buttons-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
 }
 
 footer {
