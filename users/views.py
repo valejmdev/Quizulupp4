@@ -33,23 +33,33 @@ def register(request):
 @login_required
 def profile(request):
     """
-    View to handle the display and submission of the profile update form.
-    Allows users to update their username and email.
+    View to handle both viewing and updating the user profile.
+    Allows users to view their profile details and update their username and email.
     """
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        
-        if u_form.is_valid():
+        if 'update' in request.POST and u_form.is_valid():
             u_form.save()
+            messages.success(request, 'Your profile has been updated!')
             return redirect('profile')
+
+        if 'delete' in request.POST:
+            request.user.delete()
+            messages.success(request, 'Your profile has been deleted.')
+            return redirect('home')  # Redirect to a page after profile deletion
+
     else:
         u_form = UserUpdateForm(instance=request.user)
 
+    is_edit_mode = request.GET.get('edit') == 'true'
+
     context = {
+        'user': request.user,
         'u_form': u_form,
+        'is_edit_mode': is_edit_mode
     }
 
-    return render(request, 'users/profile_update.html', context)
+    return render(request, 'users/profile.html', context)
 
 def login(request):
     """
