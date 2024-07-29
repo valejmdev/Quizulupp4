@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.db.models import Sum
 from .models import Quiz, Question, UserQuizProgress
 from .forms import QuizForm
 import logging
@@ -186,3 +187,17 @@ class QuestionCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('question-creator', kwargs={'pk': self.kwargs['pk']})
+    
+
+def leaderboard(request):
+    leaderboard_data = (
+        UserQuizProgress.objects
+        .values('user__username')
+        .annotate(total_score=Sum('score'))
+        .order_by('-total_score')[:10]  # Top 10 users
+    )
+
+    context = {
+        'leaderboard': leaderboard_data
+    }
+    return render(request, 'quiz_app/leaderboard.html', context)
