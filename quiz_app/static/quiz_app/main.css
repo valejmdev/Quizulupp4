@@ -41,7 +41,6 @@ ul {
     font-weight: 500;
 }
 
-
 /* Layout and Spacing */
 .logout-spacing {
     margin-top: .3rem;
@@ -113,13 +112,6 @@ ul {
     padding: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     text-align: left;
-}
-
-.leaderboard td img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
 }
 
 .leaderboard .rank {
@@ -276,22 +268,6 @@ textarea.form-control {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #ffffff;
-}
-
-.account-img {
-    height: 150px; 
-    width: 150px;
-    margin-right: 20px;
-    margin-bottom: 20px; 
-}
-
-.account-heading {
-    font-size: 2rem; 
-    margin-bottom: 10px;
-}
-
-.btn-outline-info {
-    margin-top: 10px;
 }
 
 /* Media Queries for Responsive Design */
