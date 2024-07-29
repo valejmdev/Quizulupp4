@@ -192,7 +192,7 @@ class QuestionCreateView(LoginRequiredMixin, CreateView):
 def leaderboard(request):
     leaderboard_data = (
         UserQuizProgress.objects
-        .values('user__username')
+        .values('user__username', 'user__profile__image')
         .annotate(total_score=Sum('score'))
         .order_by('-total_score')[:10]  # Top 10 users
     )
