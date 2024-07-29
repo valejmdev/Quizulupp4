@@ -1,0 +1,14 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for displaying the quiz completion message and score -->
+<div class="quiz-container">
+    <!-- Heading displaying the title of the completed quiz -->
+    <h2>{{ quiz.title }}</h2>
+
+    <!-- Message indicating the user has completed the quiz -->
+    <p>Congratulations! You completed the quiz.</p>
+
+    <!-- Displaying the user's score and the total number of questions in the quiz -->
+    <p>Your score: {{ score }} out of {{ total_questions }}</p>
+</div>
+{% endblock content %}

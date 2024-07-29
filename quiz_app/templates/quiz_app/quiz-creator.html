@@ -1,0 +1,78 @@
+{% extends "quiz_app/base.html" %}
+
+{% block content %}
+<!-- Container for the welcome message and instructions for creating a quiz -->
+<div class="border border-dark p-3">
+    <!-- Main heading for the Quiz Creator page -->
+    <h2>Welcome to the Quiz Creator!</h2>
+    <!-- Introduction and encouragement to create quizzes for fun or study -->
+    <p>
+        Create your own Quizzes and challenge your friends and family, or use it to prepare for your upcoming exam!
+    </p>
+</div>
+
+<!-- Container for the instructions and form to create a new quiz -->
+<div class="border border-dark quiz-view p-3">
+    <!-- Subheading explaining how to create a quiz -->
+    <h3 class="border-bottom">How to create your own Quiz!</h3>
+    <!-- Instructions on the quiz creation process -->
+    <p>
+        Start by giving your Quiz a title and selecting a category for your quiz from options like Biology, Movies, or Video Games.
+        Next, provide a brief description of your quiz and create the Questions and Answers on the following page. Once your quiz is complete, save it to your account.
+    </p>
+
+    <!-- Form to create a new quiz -->
+    <form action="{% url 'quiz-creator' %}" method="POST">
+        {% csrf_token %}
+
+        <!-- Display form errors if there are any -->
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    <!-- Loop through form fields to display individual field errors -->
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    <!-- Display non-field errors if any -->
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- Input for the quiz title -->
+        <div class="container mb-3">
+            <label for="id_title">Give your Quiz a title</label>
+            {{ form.title|add_class:"form-control" }}
+        </div>
+
+        <!-- Dropdown for selecting the quiz category -->
+        <div class="container mb-3">
+            <label for="id_category">Choose your Category</label>
+            {{ form.category|add_class:"form-control" }}
+        </div>
+
+        <!-- Input for the quiz description -->
+        <div class="container mb-3">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label for="id_description">Give your Quiz a description</label>
+                    {{ form.description|add_class:"form-control" }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit button for creating the quiz -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <button type="submit" class="btn btn-primary">Create your Quiz</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

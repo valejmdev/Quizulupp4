@@ -1,0 +1,35 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for displaying the details of a specific quiz, with a border for emphasis -->
+<div class="border border-dark">
+    <!-- Main heading displaying the title of the quiz -->
+    <h2>{{ quiz.title }}</h2>
+
+    <!-- Paragraph displaying the description of the quiz -->
+    <p>{{ quiz.description }}</p>
+
+    <!-- Unordered list to display all questions related to the quiz -->
+    <ul>
+        <!-- Loop through each question in the quiz -->
+        {% for question in quiz.questions_set.all %}
+        <li>
+            <!-- Display the question text -->
+            {{ question.question }}
+        </li>
+
+        <!-- Nested unordered list to display the possible answers for the question -->
+        <ul>
+            <!-- Display the correct answer -->
+            <li>{{ question.correct_answer }}</li>
+            <!-- Display additional possible answers -->
+            <li>{{ question.answer1 }}</li>
+            <li>{{ question.answer2 }}</li>
+            <li>{{ question.answer3 }}</li>
+        </ul>
+        {% endfor %}
+    </ul>
+
+    <!-- Link to start playing the quiz, directing to the play_quiz view -->
+    <a href="{% url 'play_quiz' quiz.id %}" class="btn btn-primary">Play Quiz</a>
+</div>
+{% endblock content %}

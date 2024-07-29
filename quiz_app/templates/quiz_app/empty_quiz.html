@@ -1,0 +1,10 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for displaying the message when no questions are available for a quiz -->
+<div class="quiz-container">
+    <!-- Display the title of the quiz -->
+    <h2>{{ quiz.title }}</h2>
+    <!-- Message indicating that there are no questions for the quiz -->
+    <p>No questions are available for this quiz.</p>
+</div>
+{% endblock content %}

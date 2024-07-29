@@ -1,0 +1,41 @@
+{% extends "quiz_app/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Container for the quiz question page with padding from the top -->
+<div class="container mt-4">
+    <!-- Main heading displaying the quiz title, centered on the page -->
+    <h2 class="text-center">{{ quiz.title }}</h2>
+    <!-- Subheading showing the current question number and the total number of questions -->
+    <p class="text-center">Question {{ question_number }} of {{ total_questions }}</p>
+
+    <!-- Form for submitting the quiz answer -->
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="text-center">
+            <!-- Display the current question, ensuring any HTML in the question is rendered safely -->
+            <p>{{ question|safe }}</p>
+
+            <!-- Container for the answer options, displayed in a grid layout -->
+            <div class="row">
+                <!-- Loop through each answer option and create a button for each -->
+                {% for answer in answers %}
+                <div class="col-6 mb-2">
+                    <!-- Button for each answer, with data attributes to handle selection -->
+                    <button type="button" class="btn btn-outline-primary w-100 answer-button" data-value="{{ answer }}">
+                        {{ answer }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Hidden input field to store the selected answer value -->
+            <input type="hidden" name="answer" id="selected-answer" value="">
+
+            <!-- Submit button for the form to submit the selected answer -->
+            <button type="submit" name="submit_answer" class="btn btn-primary mt-3">Submit Answer</button>
+        </div>
+    </form>
+</div>
+<!-- Link to the JavaScript file for handling answer selection and form submission -->
+<script src="{% static 'js/quiz.js' %}"></script>
+{% endblock content %}

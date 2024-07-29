@@ -1,0 +1,10 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for displaying a message when no quizzes are available -->
+<div class="border border-dark">
+    <!-- Main heading indicating that no quizzes are available -->
+    <h2>No Quizzes Available</h2>
+    <!-- Paragraph providing a message about the unavailability of quizzes in the specified category -->
+    <p>Sorry, there are no quizzes available in the {{ category }} category.</p>
+</div>
+{% endblock content %}

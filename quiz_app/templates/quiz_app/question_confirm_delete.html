@@ -1,0 +1,20 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for the question deletion confirmation page with a border for emphasis -->
+<div class="border border-dark">
+    <!-- Main heading asking for confirmation to delete the question -->
+    <h2>Are you sure you want to delete this question?</h2>
+
+    <!-- Display the question to be deleted, showing its content for confirmation -->
+    <p>{{ question.question }}</p>
+
+    <!-- Form to handle the deletion of the question -->
+    <form method="post">
+        {% csrf_token %}
+        <!-- Button to confirm deletion, styled as a danger button -->
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <!-- Link to cancel the deletion and return to the quiz details page -->
+        <a href="{% url 'quiz-detail' question.quiz.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

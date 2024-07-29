@@ -1,0 +1,70 @@
+{% extends "quiz_app/base.html" %}
+{% load custom_filters %}
+{% block content %}
+<div class="container mt-5">
+    <div class="content-section">
+        <!-- User profile details -->
+        <div class="media">
+            <div class="media-body">
+                 <!-- Display the username of the user -->
+                <h2 class="account-heading">{{ user.username }}</h2>
+                <!-- Display the email of the user -->
+                <p class="text-secondary">{{ user.email }}</p>
+            </div>
+        </div>
+        <!-- Form for updating user profile information -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <!-- Fieldset for grouping profile information fields -->
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                <div class="form-row">
+                    <!-- Column for username field -->
+                    <div class="col-md-6 mb-3">
+                        <!-- Render the username label -->
+                        {{ u_form.username.label_tag }}
+                        <!-- Render the username input field with the form-control class -->
+                        {{ u_form.username|add_class:"form-control" }}
+                    </div>
+                    <!-- Column for email field -->
+                    <div class="col-md-6 mb-3">
+                        <!-- Render the email label -->
+                        {{ u_form.email.label_tag }}
+                        <!-- Render the email input field with the form-control class -->
+                        {{ u_form.email|add_class:"form-control" }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- Column for profile image field -->
+                    <div class="col-md-6 mb-3">
+                        <!-- Render the profile image label -->
+                        {{ p_form.image.label_tag }}
+                        <!-- Render the profile image input field with the form-control class -->
+                        {{ p_form.image|add_class:"form-control" }}
+                    </div>
+                    <!-- Column for bio field -->
+                    <div class="col-md-6 mb-3">
+                        <!-- Render the bio label -->
+                        {{ p_form.bio.label_tag }}
+                        <!-- Render the bio input field with the form-control class -->
+                        {{ p_form.bio|add_class:"form-control" }}
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <!-- Button to submit profile updates -->
+                <button class="btn btn-outline-info" type="submit" name="update">Update</button>
+                <!-- Button to delete the user profile with a confirmation prompt -->
+                <button class="btn btn-outline-danger" type="submit" name="delete" onclick="return confirmDelete();">Delete Profile</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript function to confirm profile deletion -->
+<script>
+function confirmDelete() {
+    return confirm('Are you sure you want to delete your profile? This action cannot be undone.');
+}
+</script>
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% extends "quiz_app/base.html" %}
+
+{% block content %}
+    <div class="border border-dark categories-title">
+        <!-- Section header for user's quizzes -->
+        <h2>My Quizzes</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Button to create a new quiz -->
+                <div class="col-md-12 mb-4">
+                    <a href="{% url 'quiz-creator' %}" class="btn btn-success mb-4">Create My Own Quiz</a>
+                </div>
+
+                <!-- Loop through each quiz and display its details -->
+                {% for quiz in quizzes %}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <!-- Quiz title and description -->
+                            <h3 class="card-title">{{ quiz.title }}</h3>
+                            <p class="card-text">{{ quiz.description }}</p>
+                            <!-- Buttons for quiz actions -->
+                            <a href="{% url 'quiz-detail' quiz.id %}" class="btn btn-primary mb-2">Play</a>
+                            <a href="{% url 'quiz-update' quiz.id %}" class="btn btn-secondary mb-2">Update</a>
+                            <form class="delete-form" method="post" action="{% url 'quiz-delete' quiz.id %}">
+                                {% csrf_token %}
+                                <!-- Button to delete the quiz -->
+                                <button type="submit" class="btn btn-danger mb-2">Delete</button>
+                            </form>
+                            <!-- Button to generate and share quiz link -->
+                            <button type="button" class="btn btn-info mb-2 generate-link" data-toggle="modal" data-target="#linkModal" data-quiz-id="{{ quiz.id }}">Generate Link</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for sharing quiz link -->
+    <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- Modal header with title and close button -->
+                    <h5 class="modal-title" id="linkModalLabel">Share Your Quiz</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Input field to display the quiz link -->
+                    <input type="text" id="quiz-link" class="form-control" readonly>
+                    <!-- Button to copy the quiz link -->
+                    <button type="button" id="copy-link" class="btn btn-primary mt-2">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

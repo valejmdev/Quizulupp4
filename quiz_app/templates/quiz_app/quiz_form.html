@@ -1,0 +1,18 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for displaying the quiz creation or update form, with a border for emphasis -->
+<div class="border border-dark">
+    <!-- Conditional heading that changes based on whether a quiz instance exists (update) or not (create) -->
+    <h2>{% if quiz.pk %}Update{% else %}Create{% endif %} Quiz</h2>
+
+    <!-- Form for either creating a new quiz or updating an existing one -->
+    <form method="post">
+        <!-- CSRF token for security, prevents Cross-Site Request Forgery attacks -->
+        {% csrf_token %}
+        <!-- Render the form fields as paragraphs (form fields will be generated based on the `form` object passed from the view) -->
+        {{ form.as_p }}
+        <!-- Submit button with conditional text based on whether the quiz is being created or updated -->
+        <button type="submit" class="btn btn-primary">{% if quiz.pk %}Update{% else %}Save{% endif %} Quiz</button>
+    </form>
+</div>
+{% endblock content %}

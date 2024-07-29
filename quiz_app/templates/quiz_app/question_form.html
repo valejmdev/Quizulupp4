@@ -1,0 +1,25 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for the form to create or update a question, with a border for emphasis -->
+<div class="border border-dark">
+    <!-- Main heading indicating whether the form is for updating or creating a new question, and displays the quiz title -->
+    <h2>{% if form.instance.pk %}Update{% else %}Create{% endif %} Question for Quiz: {{ quiz.title }}</h2>
+
+    <!-- Form for creating or updating a question -->
+    <form method="post">
+        {% csrf_token %}
+        <!-- Render the form fields as paragraph elements -->
+        {{ form.as_p }}
+        <!-- Submit button that changes its text based on whether it's an update or creation operation -->
+        <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Update{% else %}Save{% endif %} Question</button>
+    </form>
+    
+    <!-- Optional form to finish the quiz if there are 2 or more questions -->
+    {% if question_count >= 2 %}
+    <form method="get" action="{% url 'quiz-detail' quiz.id %}">
+        <!-- Button to finish the quiz, which is only shown if the quiz has 2 or more questions -->
+        <button type="submit" class="btn btn-success mt-2">Finish Quiz</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock content %}

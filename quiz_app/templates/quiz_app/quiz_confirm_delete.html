@@ -1,0 +1,18 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<!-- Container for the confirmation form to delete a quiz, with a border for emphasis -->
+<div class="border border-dark">
+    <!-- Main heading asking for confirmation to delete the specific quiz -->
+    <h2>Are you sure you want to delete the quiz "{{ quiz.title }}"?</h2>
+
+    <!-- Form for deleting the quiz -->
+    <form method="post">
+        <!-- CSRF token for security to protect against cross-site request forgery -->
+        {% csrf_token %}
+        <!-- Button to confirm and submit the deletion request -->
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <!-- Link to cancel the deletion and return to the quiz details page -->
+        <a href="{% url 'quiz-detail' quiz.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends "quiz_app/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Leaderboard section displaying user rankings and scores -->
+<div class="leaderboard">
+    <!-- Main heading for the leaderboard page -->
+    <h1>Leaderboard</h1>
+
+    <!-- Table to display the leaderboard entries -->
+    <table>
+        <!-- Table header with column titles -->
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Total Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through each entry in the leaderboard -->
+            {% for entry in leaderboard %}
+            <tr>
+                <!-- Display the rank of the user (1-based index) -->
+                <td class="rank">{{ forloop.counter }}</td>
+
+                <!-- Display the user's username -->
+                <td class="username">
+                    <!-- User's username -->
+                    {{ entry.user__username }}
+                </td>
+                <!-- Display the user's total score -->
+                <!-- Add a trophy icon next to the highest score -->
+                <td class="score">
+                    {{ entry.total_score }}
+                    {% if forloop.first %}
+                    <span class="trophy-icon">🏆</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
