@@ -40,20 +40,3 @@ class UserUpdateForm(forms.ModelForm):
         """
         model = User 
         fields = ['username', 'email']
-
-
-class ProfileUpdateForm(forms.ModelForm):
-    """
-    A form for updating user profile information.
-
-    This form is used to update the user's profile image.
-    """
-    class Meta: 
-        """
-        Meta class for configuring the form's model and fields.
-
-        - `model`: Specifies the Profile model to be used.
-        - `fields`: Defines the fields to be included in the form.
-        """
-        model = Profile
-        fields = ['image']

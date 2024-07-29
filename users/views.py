@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -33,36 +33,23 @@ def register(request):
 @login_required
 def profile(request):
     """
-    Display and handle updates to the user's profile.
-
-    If the request method is POST, this view processes the profile update form submissions.
-    On successful update, it saves the user and profile forms and redirects to the profile page with a success message.
-    If the request method is GET, it displays the current user and profile information in the forms.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: The rendered profile template with the user and profile forms.
+    View to handle the display and submission of the profile update form.
+    Allows users to update their username and email.
     """
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid():
+        
+        if u_form.is_valid():
             u_form.save()
-            p_form.save()
-            messages.success(request, f'Your account has been updated!')
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
         'u_form': u_form,
-        'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/profile_update.html', context)
 
 def login(request):
     """
