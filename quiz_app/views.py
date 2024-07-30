@@ -139,7 +139,7 @@ class MyQuizCreateView(LoginRequiredMixin, CreateView):
     """
     model = Quiz
     form_class = QuizForm
-    template_name = 'quiz_app/quiz_form.html'
+    template_name = 'quiz_app/quiz_creator.html'
 
     def form_valid(self, form):
         """
@@ -206,51 +206,6 @@ class QuizDeleteView(LoginRequiredMixin, DeleteView):
         Redirect to the home page upon successful deletion of the quiz.
         """
         return reverse_lazy('quiz-index')
-
-class QuestionUpdateView(LoginRequiredMixin, UpdateView):
-    """
-    View for updating a question. Only accessible to the creator of the quiz to which the question belongs.
-    """
-    model = Question
-    fields = ['question_text', 'correct_answer', 'incorrect_answer1', 'incorrect_answer2', 'incorrect_answer3']
-    template_name = 'quiz_app/question_form.html'
-
-    def get_object(self, queryset=None):
-        """
-        Ensure that only the creator of the quiz can update the question.
-        """
-        obj = super().get_object(queryset)
-        if obj.quiz.created_by != self.request.user:
-            raise PermissionDenied("You do not have permission to edit this question.")
-        return obj
-
-    def get_success_url(self):
-        """
-        Redirect to the detail page of the quiz to which the question belongs upon successful form submission.
-        """
-        return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.quiz.pk})
-
-class QuestionDeleteView(LoginRequiredMixin, DeleteView):
-    """
-    View for deleting a question. Only accessible to the creator of the quiz to which the question belongs.
-    """
-    model = Question
-    template_name = 'quiz_app/question_confirm_delete.html'
-
-    def get_object(self, queryset=None):
-        """
-        Ensure that only the creator of the quiz can delete the question.
-        """
-        obj = super().get_object(queryset)
-        if obj.quiz.created_by != self.request.user:
-            raise PermissionDenied("You do not have permission to delete this question.")
-        return obj
-
-    def get_success_url(self):
-        """
-        Redirect to the detail page of the quiz to which the question belongs upon successful deletion.
-        """
-        return reverse_lazy('quiz-detail', kwargs={'quiz_id': self.object.quiz.pk})
 
 class QuestionCreateView(LoginRequiredMixin, CreateView):
     """
