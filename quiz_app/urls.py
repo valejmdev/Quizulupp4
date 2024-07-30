@@ -18,10 +18,6 @@ urlpatterns = [
     path('quiz/<int:pk>/edit/', views.QuizUpdateView.as_view(), name='quiz-update'),
     # Page to delete a specific quiz
     path('quiz/<int:pk>/delete/', views.QuizDeleteView.as_view(), name='quiz-delete'),
-    # Page to edit a specific question
-    path('questions/<int:pk>/edit/', views.QuestionUpdateView.as_view(), name='question-update'),
-    # Page to delete a specific question
-    path('questions/<int:pk>/delete/', views.QuestionDeleteView.as_view(), name='question-delete'),
     # Page to view the user's quizzes
     path('my-quizzes/', views.my_quizzes, name='my-quizzes'),
     # Page to play a specific quiz
