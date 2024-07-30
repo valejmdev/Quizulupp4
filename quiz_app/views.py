@@ -72,8 +72,10 @@ def play_quiz(request, quiz_id):
 
     if request.method == 'POST':
         selected_answer = request.POST.get('answer')
-        
-        if selected_answer:
+
+        if not selected_answer:
+            messages.error(request, "Please choose an answer")
+        else:
             if selected_answer == current_question.correct_answer:
                 progress.score += 1
 
