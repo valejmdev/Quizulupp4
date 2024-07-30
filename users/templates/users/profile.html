@@ -44,9 +44,9 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit" name="update">Update</button>
-                <button class="btn btn-outline-danger" type="submit" name="delete" onclick="return confirmDelete();">Delete Profile</button>
-                <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
+                <button class="btn btn-outline-info btn-spacing" type="submit" name="update">Update</button>
+                <button class="btn btn-outline-danger btn-spacing" type="submit" name="delete" onclick="return confirmDelete();">Delete Profile</button>
+                <a href="{% url 'profile' %}" class="btn btn-secondary btn-spacing">Cancel</a>
             </div>
         </form>
         {% else %}
