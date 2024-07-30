@@ -6,6 +6,16 @@
         <h2>My Quizzes</h2>
         <div class="container">
             <div class="row">
+                <!-- Introduction to creating a quiz -->
+                <div class="col-md-12 mb-4">
+                    <div class="alert alert-info">
+                        <h4>Create Your Own Quiz</h4>
+                        <p>To create a new quiz, click the "Create My Own Quiz" button. You will be prompted to enter a title, choose a category, and write a description for your quiz. After that, you can add your own questions related to the topic.</p>
+                        <p>Please be cautious when adding questions as you can only create them once. There is no option to edit or delete individual questions once they have been added, so make sure you review your questions carefully before finalizing your quiz.</p>
+                        <p>Have fun and challenge yourself and others with your custom quizzes!</p>
+                    </div>
+                </div>
+
                 <!-- Button to create a new quiz -->
                 <div class="col-md-12 mb-4">
                     <a href="{% url 'quiz-creator' %}" class="btn btn-success mb-4">Create My Own Quiz</a>
