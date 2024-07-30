@@ -1,3 +1,4 @@
+/* Basic HTML and Body Styles */
 html {
     position: relative;
     min-height: 100%;
@@ -6,8 +7,8 @@ html {
 body {
     background-color: #fafafa;
     color: #4A4453;
-    margin-top: 5rem;
-    margin-bottom: 300px;
+    margin-top: 1rem;
+    margin-bottom: 100px;
 }
 
 h1,
@@ -23,6 +24,7 @@ ul {
     margin: 0;
 }
 
+/* Background and Text Colors */
 .bg-steel {
     background-color: #A37DE5;
 }
@@ -39,14 +41,101 @@ ul {
     font-weight: 500;
 }
 
+/* Layout and Spacing */
+.logout-spacing {
+    margin-top: .3rem;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
 .content-section {
     background: #ffffff;
-    padding: 10px 20px;
+    padding: 2px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
 }
 
+.equal-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.border-box,
+.content-section {
+    flex: 1;
+    border: 1px solid #000;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+.margin-between {
+    margin-bottom: 20px;
+}
+
+/* Leaderboard Styles */
+.leaderboard {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.leaderboard h1 {
+    margin: 0;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.leaderboard th, .leaderboard td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+}
+
+.leaderboard .rank {
+    width: 40px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.leaderboard .username {
+    display: flex;
+    align-items: center;
+}
+
+.leaderboard .score {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.trophy-icon {
+    margin-left: 5px;
+    color: gold;
+}
+
+/* Form and Button Styles */
 .border {
     padding: 10px;
 }
@@ -63,12 +152,6 @@ ul {
     padding: 15px;
 }
 
-.content-section {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-}
-
 .list-group-item-light {
     background-color: #f9f9f9;
 }
@@ -81,13 +164,13 @@ ul {
     margin: 30px;
     border: 1px solid slategrey;
     height: 50px;
-    max-width: 100px;
+    max-width: 60px;
     text-align: center;
 }
 
 .quiz-view {
     max-height: 60%;
-    width: 100%
+    width: 100%;
 }
 
 #creatorCategory {
@@ -95,7 +178,7 @@ ul {
     padding: 10px;
     border: 1px solid slategrey;
     border-radius: 5px;
-    max-width: 30%;
+    max-width: 100%;
 }
 
 .card {
@@ -110,12 +193,12 @@ ul {
 
 .card-title {
     text-transform: uppercase;
-    font-size: 1.25rem;
-    margin: 1rem;
+    font-size: 0.9rem;
+    margin: 0.1rem;
 }
 
 .card-text {
-    margin: 1rem;
+    margin: 0.1rem;
 }
 
 .my-quiz-card-body {
@@ -176,12 +259,10 @@ textarea.form-control {
     color: white;
 }
 
-/* Ensure uniform spacing for form inputs */
 .form-row .form-control {
     margin-bottom: 15px;
 }
 
-/* Add padding to the content-section for better spacing */
 .content-section {
     padding: 20px;
     border: 1px solid #ddd;
@@ -189,58 +270,10 @@ textarea.form-control {
     background-color: #ffffff;
 }
 
-/* Style the profile image */
-.account-img {
-    height: 150px; 
-    width: 150px;
-    margin-right: 20px;
-    margin-bottom: 20px; 
-}
+/* Media Queries for Responsive Design */
 
-/* Adjust heading font size */
-.account-heading {
-    font-size: 2rem; 
-    margin-bottom: 10px;
-}
-
-/* Ensure form fields and buttons are responsive and spaced well */
-.btn-outline-info {
-    margin-top: 10px;
-}
-
-@media (max-width: 1200px) {
-    body {
-        margin-top: 4rem;
-        margin-bottom: 250px;
-    }
-    .categories-spacing {
-        max-width: 90px;
-    }
-    .content-section {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 992px) {
-    body {
-        margin-top: 3rem;
-        margin-bottom: 200px;
-    }
-    .categories-spacing {
-        max-width: 80px;
-    }
-    .content-section {
-        padding: 10px;
-    }
-    .card-title {
-        font-size: 1.1rem;
-    }
-    .card-text {
-        margin: 0.5rem;
-    }
-}
-
-@media (max-width: 768px) {
+/* Small Devices (Phones) */
+@media (min-width: 576px) {
     body {
         margin-top: 2rem;
         margin-bottom: 150px;
@@ -263,24 +296,71 @@ textarea.form-control {
     .form-row .col-md-6 {
         margin-bottom: 15px;
     }
+    .answer-buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
-@media (max-width: 576px) {
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) {
     body {
-        margin-top: 1rem;
-        margin-bottom: 100px;
+        margin-top: 3rem;
+        margin-bottom: 200px;
     }
     .categories-spacing {
-        max-width: 60px;
+        max-width: 80px;
     }
     .content-section {
-        padding: 2px;
+        padding: 10px;
     }
     .card-title {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     .card-text {
-        margin: 0.1rem;
+        margin: 0.5rem;
+    }
+    .form-row {
+        flex-direction: row;
+    }
+    .form-row .col-md-6 {
+        margin-bottom: 0;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .answer-buttons-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 992px) {
+    body {
+        margin-top: 4rem;
+        margin-bottom: 250px;
+    }
+    .categories-spacing {
+        max-width: 90px;
+    }
+    .content-section {
+        padding: 15px;
+    }
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1200px) {
+    body {
+        margin-top: 5rem;
+        margin-bottom: 300px;
+    }
+    .categories-spacing {
+        max-width: 100px;
     }
 }
 
@@ -294,17 +374,6 @@ textarea.form-control {
     height: 300px;
 }
 
-@media (max-width: 768px) {
-    body {
-        margin-bottom: 700px;
-    }
-
-    .footer {
-        height: 200px;
-    }
-}
-
-/* Sticky footer style and color */
 footer {
     padding-top: 30px;
     background-color: #292c2f;
