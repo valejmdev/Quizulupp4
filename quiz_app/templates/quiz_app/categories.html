@@ -4,7 +4,11 @@
 <!-- Introduction Section: Describes the purpose of the page -->
 <div class="text-box border border-dark mb-4 p-3">
     <h2>Select a Category</h2>
-    <p>Choose a category to start a random quiz from that category.</p>
+    <p class="intro-space">Choose a category to start a random quiz from that category. Here’s how it works:</p>
+    <p class="intro-space"><strong>Select a Category:</strong> Browse through the available categories and select one that interests you.</p>
+    <p class="intro-space"><strong>Start the Quiz:</strong> Click the "Start Quiz" button to begin. You will be taken to a new page with the quiz for the selected category.</p>
+    <p class="intro-space"><strong>Read the Title:</strong> On the quiz page, take a moment to read the title and instructions to understand what the quiz is about.</p>
+    <p class="intro-space"><strong>Play the Quiz:</strong> Choose your answers to the questions. After making a choice, click the "Submit Answer" button to proceed to the next question.</p>
 </div>
 
 <!-- Category Selection Section: Displays a list of categories in card format -->
@@ -28,9 +32,9 @@
 <!-- Call-to-Action Section: Encourages users to create their own quizzes -->
 <div class="text-box border border-dark mt-4 p-3">
     <p>
-        Can't find something that fits your vibe? <br>Then create your own Quizzes and challenge your friends and family or use it to learn for your upcoming exam!
+        Can't find something that fits your vibe? <br>Then create your own quizzes and challenge your friends and family or use it to prepare for your upcoming exam!
     </p>
     <!-- Button to navigate to the quiz creation page -->
-    <a href="{% url 'quiz-creator' %}" class="btn btn-success ">Create your own Quiz!</a>
+    <a href="{% url 'quiz-creator' %}" class="btn btn-success">Create Your Own Quiz!</a>
 </div>
 {% endblock content %}
