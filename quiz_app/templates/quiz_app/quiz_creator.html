@@ -1,4 +1,5 @@
 {% extends "quiz_app/base.html" %}
+{% load quiz_extras %}
 
 {% block content %}
 <!-- Container for the welcome message and instructions for creating a quiz -->
@@ -17,19 +18,19 @@
     <h3 class="border-bottom">How to Create Your Quiz</h3>
     <!-- Instructions on the quiz creation process -->
     <p>
-        1. **Title:** Start by entering a title for your quiz. Make it catchy and relevant to the topic of your quiz.
+        1. Title: Start by entering a title for your quiz. Make it catchy and relevant to the topic of your quiz.
     </p>
     <p>
-        2. **Category:** Choose a category from the dropdown list that best fits your quiz. Categories include options like Biology, Movies, Video Games, and more.
+        2. Category: Choose a category from the dropdown list that best fits your quiz. Categories include options like Biology, Movies, Video Games, and more.
     </p>
     <p>
-        3. **Description:** Write a brief description of your quiz to give users an idea of what to expect.
+        3. Description: Write a brief description of your quiz to give users an idea of what to expect.
     </p>
     <p>
-        4. **Questions and Answers:** After submitting this form, you'll be taken to a page where you can add your questions and answers. Be sure to double-check your questions, as you can only create them once and can't edit or delete them later.
+        4. Questions and Answers: After submitting this form, you'll be taken to a page where you can add your questions and answers. Be sure to double-check your questions, as you can only create them once and can't edit or delete them later.
     </p>
     <p>
-        5. **Save:** Once you're satisfied with your quiz, save it to your account. You can then play it yourself, share it with others, or even update it if needed.
+        5. Save: Once you're satisfied with your quiz, save it to your account. You can then play it yourself, share it with others, or even update it's title, categories and the description if needed.
     </p>
 
     <!-- Form to create a new quiz -->
