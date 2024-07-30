@@ -11,7 +11,6 @@ This project was created as part of Code Institute's Full Stack Software Develop
 - [User Experience](#user-experience)
   - [User Benefits](#user-benefits)
   - [Persona](#persona)
-  - [User Journey](#user-journey)
   - [Program Flowchart](#program-flowchart)
 - [Features](#features)
   - [Username Validation](#username-validation)
@@ -41,7 +40,7 @@ This project was created as part of Code Institute's Full Stack Software Develop
 
 ### User Benefits
 
-## Persona: Alex Johnson
+## Persona: Alex Schmidt
 
 ### Demographic Information
 
@@ -105,8 +104,6 @@ Alex Johnson is sitting at their favorite coffee shop on a Saturday afternoon, b
 Upon logging in, Alex is greeted by their personalized dashboard showing their high scores and quizzes they've created. Feeling competitive, Alex chooses to play a multiple-choice quiz in the "Video Games" category. After enjoying the quiz and scoring high, they decide to create a new quiz on "Cybersecurity," a topic they are passionate about.
 
 Alex spends the next hour crafting challenging questions and perfecting the quiz. Satisfied with their creation, they publish it and share the link on their social media, inviting friends to try it out. Before leaving the coffee shop, Alex checks their dashboard once more, smiling at the thought of all the fun and learning ahead.
-
-### User Journey
 
 ### Program Flowchart
 
