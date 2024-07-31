@@ -298,6 +298,7 @@ select textarea {
     margin-top: 1rem;
     background-color: #007356;
     border-color: #007356;
+    color: #FFFFFF;
 }
 
 .btn-success {
