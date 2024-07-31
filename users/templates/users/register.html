@@ -19,8 +19,17 @@
             <!-- CSRF token for security to prevent cross-site request forgery attacks -->
             {% csrf_token %}
 
-            <!-- Render the form fields as paragraph elements (with labels and inputs) -->
-            {{ form.as_p }}
+            <!-- Render the form fields individually -->
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
 
             <!-- Submit button for the registration form -->
             <button type="submit" class="btn btn-primary">Register</button>
