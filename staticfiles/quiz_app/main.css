@@ -58,6 +58,10 @@ select textarea {
     font-weight: 500;
 }
 
+.sidebar-link-color{
+    color:#007356 !important;
+}
+
 .alert {
     background-color: #671DE7;
     color: #fafafa;
