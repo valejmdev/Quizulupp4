@@ -461,7 +461,11 @@ footer a {
 }
 
 .footer-link-space {
-    margin: 20px;
+    margin: 50px;
+}
+
+.footer-head{
+    color: #00AD87;
 }
 
 footer a:hover,
