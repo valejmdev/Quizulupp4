@@ -81,7 +81,8 @@ class Command(BaseCommand):
                     if data.get('response_code') != 0:
                         self.stdout.write(self.style.ERROR(
                             f'Error in API response for category: {category}. '
-                            f'Error: {data.get("response_message", "Unknown error")}.'
+                            f'Error: '
+                            f'{data.get("response_message", "Unknown error")}.'
                         ))
                         continue
 
