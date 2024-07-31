@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
+
 class UserRegisterForm(UserCreationForm):
     """
     A form for registering new users.
@@ -12,14 +13,14 @@ class UserRegisterForm(UserCreationForm):
     """
     email = forms.EmailField()
 
-    class Meta: 
+    class Meta:
         """
         Meta class for configuring the form's model and fields.
 
         - `model`: Specifies the User model to be used.
         - `fields`: Defines the fields to be included in the form.
         """
-        model = User 
+        model = User
         fields = ['username', 'email', 'password1', 'password2']
 
 
@@ -31,12 +32,12 @@ class UserUpdateForm(forms.ModelForm):
     """
     email = forms.EmailField()
 
-    class Meta: 
+    class Meta:
         """
         Meta class for configuring the form's model and fields.
 
         - `model`: Specifies the User model to be used.
         - `fields`: Defines the fields to be included in the form.
         """
-        model = User 
+        model = User
         fields = ['username', 'email']

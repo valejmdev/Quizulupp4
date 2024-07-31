@@ -1,10 +1,11 @@
 from django import forms
 from .models import Quiz
 
+
 class QuizForm(forms.ModelForm):
     """
     A form for creating and updating Quiz instances.
-    
+
     This form uses the `Quiz` model and includes fields for the quiz's title,
     category, and description. It also customizes the widget for the 'category'
     field to use a select dropdown with predefined choices.

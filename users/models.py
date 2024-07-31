@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Profile(models.Model):
     """
     A model representing a user profile.
 
-    This model is linked to the built-in User model via a one-to-one relationship.
+    This model is linked to the built-in User model via
+    a one-to-one relationship.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
