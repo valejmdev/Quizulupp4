@@ -154,4 +154,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://ui.dev/amiresponsive",
+    "http://localhost:8080",
+]
