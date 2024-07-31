@@ -339,14 +339,7 @@ textarea.form-control {
     margin-bottom: 10px;     
     white-space: normal;     
     word-wrap: break-word;   
-    background-color: #007356 !important; 
-    border-color: #007356 !important;
     transition: background-color 0.3s, color 0.3s;
-}
-
-.answer-button.active {
-    background-color: #007356; 
-    color: #fafafa;
 }
 
 .form-row .form-control {
