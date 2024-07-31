@@ -403,7 +403,7 @@ textarea.form-control {
     }
 
     .footer {
-        height: 200px;
+        min-height: 200px;
     }
 
     .answer-buttons-container {
@@ -461,7 +461,7 @@ footer a {
 }
 
 .footer-link-space {
-    margin: 20px;
+    margin: 25px;
 }
 
 .footer-head{
