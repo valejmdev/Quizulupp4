@@ -26,7 +26,15 @@
                     {{ field }}
                     {{ field.errors }}
                     {% if field.help_text %}
-                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                        <!-- Use a div or span instead of small for better structure -->
+                        <div id="{{ field.id_for_label }}_helptext" class="form-text text-muted">
+                            {% if field.help_text|slice:":2" == "<ul" %}
+                                <!-- Avoid placing block-level elements directly -->
+                                <span>{{ field.help_text|safe }}</span>
+                            {% else %}
+                                {{ field.help_text }}
+                            {% endif %}
+                        </div>
                     {% endif %}
                 </div>
             {% endfor %}
