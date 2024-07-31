@@ -67,11 +67,6 @@ select textarea {
     color: #fafafa;
 }
 
-.generate-link{
-    background-color: #156b79;
-    border-color: #156b79;
-}
-
 /* Layout and Spacing */
 .logout-spacing {
     margin-top: .32rem;
@@ -165,6 +160,7 @@ select textarea {
     background: rgba(0, 0, 0, 0.1);
     font-size: 1.5em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fafafa;
 }
 
 .leaderboard table {
@@ -177,6 +173,7 @@ select textarea {
     padding: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     text-align: left;
+    color: #fafafa;
 }
 
 .leaderboard .rank {
@@ -342,12 +339,13 @@ textarea.form-control {
     margin-bottom: 10px;     
     white-space: normal;     
     word-wrap: break-word;   
+    background-color: #007356 !important; 
+    border-color: #007356 !important;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .answer-button.active {
-    background-color: #007356 !important; 
-    border-color: #007356 !important;
+    background-color: #007356; 
     color: #fafafa;
 }
 
