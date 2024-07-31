@@ -208,7 +208,7 @@ The script is designed to populate the database with initial quiz data. It fetch
 
 #### Example Usage
 To run the script, use the following command in the terminal:
-- ```sh
+- sh
 - python manage.py <command_name>
 
 ## Technologies Used
