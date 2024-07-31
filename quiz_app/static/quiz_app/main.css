@@ -67,6 +67,11 @@ select textarea {
     color: #fafafa;
 }
 
+.generate-link{
+    background-color: #156b79;
+    border-color: #156b79;
+}
+
 /* Layout and Spacing */
 .logout-spacing {
     margin-top: .32rem;
@@ -341,7 +346,8 @@ textarea.form-control {
 }
 
 .answer-button.active {
-    background-color: #007356; 
+    background-color: #007356 !important; 
+    border-color: #007356 !important;
     color: #fafafa;
 }
 
