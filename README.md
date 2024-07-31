@@ -249,6 +249,256 @@ To run the script, use the following command in the terminal:
 ### External Services
 - **Open Trivia Database API**: An external API used to fetch quiz questions for populating the application database.
 
+# Testing
+
+> [!NOTE]  
+
+> Return back to the [README.md](README.md) file.
+
+## Code Validation
+
+### HTML
+
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+| Directory     | File                | Screenshot                                       | Notes |
+
+| ------------- | ------------------- | ------------------------------------------------ | ----- |
+
+| quizulu       | home.html           | ![screenshot](documentation/validation/test-home.png) |       |
+
+| quizulu       | register.html       | ![screenshot](documentation/validation/html-register-v.png) |       |
+
+| quizulu       | login.html          | ![screenshot](documentation/validation/html-login-v.png) |       |
+
+| quizulu       | profile.html        | ![screenshot](documentation/validation/html-profile-v.png) |       |
+
+| quizulu       | create_quiz.html    | ![screenshot](documentation/validation/html-create-quiz-v.png) |       |
+
+| quizulu       | update_quiz.html    | ![screenshot](documentation/validation/html-update-quiz-v.png) |       |
+
+| quizulu       | delete_quiz.html    | ![screenshot](documentation/validation/html-delete-quiz-v.png) |       |
+
+| quizulu       | play_quiz.html      | ![screenshot](documentation/validation/html-play-quiz-v.png) |       |
+
+| quizulu       | quiz_results.html   | ![screenshot](documentation/validation/html-quiz-results-v.png) |       |
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File       | Screenshot                                           | Notes |
+
+| --------- | ---------- | ---------------------------------------------------- | ----- |
+
+| quizulu   | style.css  | ![screenshot](documentation/validation/css-valid.png) |       |
+
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| Directory | File       | Screenshot                                           | Notes |
+
+| --------- | ---------- | ---------------------------------------------------- | ----- |
+
+| quizulu   | script.js  | ![screenshot](documentation/validation/js-valid.png)  |       |
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| Directory    | File                | CI URL                                                                                                                  | Screenshot                                           | Notes |
+
+| ------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----- |
+
+| quizulu      | admin.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/admin.py)         | ![screenshot](documentation/validation/admin-py-v.png) |       |
+
+| quizulu      | forms.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/forms.py)         | ![screenshot](documentation/validation/forms-py-v.png) |       |
+
+| quizulu      | models.py           | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/models.py)        | ![screenshot](documentation/validation/models-py-v.png) |       |
+
+| quizulu      | urls.py             | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/urls.py)          | ![screenshot](documentation/validation/urls-py-v.png) |       |
+
+| quizulu      | views.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/views.py)         | ![screenshot](documentation/validation/views-py-v.png) |       |
+
+| quizulu      | manage.py           | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/manage.py)                | ![screenshot](documentation/validation/manage-py-v.png) |       |
+
+| my_project   | settings.py         | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/my_project/settings.py)    | ![screenshot](documentation/validation/settings-py-v.png) |       |
+
+| my_project   | urls.py             | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/my_project/urls.py)        | ![screenshot](documentation/validation/urls-py-v.png) |       |
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser   | Home                                    | Register                                | Login                                 | Profile                                | Notes |
+
+| --------- | --------------------------------------- | --------------------------------------- | ------------------------------------- | --------------------------------------- | ----- |
+
+| Chrome    | ![screenshot](documentation/browsers/desk-chrome-home.png) | ![screenshot](documentation/browsers/desk-chrome-register.png) | ![screenshot](documentation/browsers/desk-chrome-login.png) | ![screenshot](documentation/browsers/desk-chrome-profile.png) | Works as expected |
+
+| Firefox   | ![screenshot](documentation/browsers/desk-fire-home.png)   | ![screenshot](documentation/browsers/desk-fire-register.png)   | ![screenshot](documentation/browsers/desk-fire-login.png)   | ![screenshot](documentation/browsers/desk-fire-profile.png)   | Works as expected |
+
+| Safari    | ![screenshot](documentation/browsers/desk-safari-home.png) | ![screenshot](documentation/browsers/desk-safari-register.png) | ![screenshot](documentation/browsers/desk-safari-login.png) | ![screenshot](documentation/browsers/desk-safari-profile.png) | Minor CSS differences |
+
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device             | Home                                    | Register                                | Login                                 | Profile                                | Notes            |
+
+| ------------------ | --------------------------------------- | --------------------------------------- | ------------------------------------- | --------------------------------------- | ---------------- |
+
+| Mobile (DevTools)  | ![screenshot](documentation/responsiveness/Mob-home.jpeg) | ![screenshot](documentation/responsiveness/Mob-register.jpeg) | ![screenshot](documentation/responsiveness/Mob-login.jpeg) | ![screenshot](documentation/responsiveness/Mob-profile.jpeg) | Works as expected |
+
+| Tablet (DevTools)  | ![screenshot](documentation/responsiveness/Tab-home.png) | ![screenshot](documentation/responsiveness/Tab-register.png) | ![screenshot](documentation/responsiveness/Tab-login.png) | ![screenshot](documentation/responsiveness/Tab-profile.png) | Works as expected |
+
+| Desktop            | ![screenshot](documentation/responsiveness/desk-chrome-home.png) | ![screenshot](documentation/responsiveness/Desk-register.png) | ![screenshot](documentation/responsiveness/desk-chrome-login.png) | ![screenshot](documentation/responsiveness/desk-chrome-profile.png) | Works as expected |
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page          | Mobile                                        | Desktop                                       | Notes                                      |
+
+| ------------- | --------------------------------------------- | --------------------------------------------- | ------------------------------------------ |
+
+| Home          | ![screenshot](documentation/lighthouse/lighthouse-mob-home.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-home.png) | Slow response time due to large images     |
+
+| Register      | ![screenshot](documentation/lighthouse/lighthouse-mob-register.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-register.png) | Some minor warnings                        |
+
+| Login         | ![screenshot](documentation/lighthouse/lighthouse-mob-login.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-login.png) | Some minor warnings                        |
+
+| Profile       | ![screenshot](documentation/lighthouse/lighthouse-mob-profile.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-profile.png) | Some minor warnings                        |
+
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| Page          | Expectation                                               | Test                                          | Result                                        | Fix                                        | Screenshot                                           |
+
+| ------------- | --------------------------------------------------------- | --------------------------------------------- | --------------------------------------------- | ------------------------------------------- | ---------------------------------------------------- |
+
+| Home          |                                                           |                                               |                                               |                                              |                                                      |
+
+|               | Feature is expected to show a custom 404 page when a non-existent URL is accessed | Accessed a non-existent URL on the website | The custom 404 page was displayed as expected | Test concluded and passed                  | ![screenshot](documentation/defensive/404-t.png)     |
+
+| Register      |                                                           |                                               |                                               |                                              |                                                      |
+
+|               | Feature is expected to prevent empty submission           | Submitted an empty form                       | Form errors displayed for all fields: username, email, password | Test concluded and passed                  | ![screenshot](documentation/defensive/empty-def.png) |
+
+|               | Feature is expected to prevent invalid email submission   | Submitted a form with an invalid email        | Form error displayed for the email field      | Test concluded and passed                  | ![screenshot](documentation/defensive/email-def.png) |
+
+| Profile       |                                                           |                                               |                                               |                                              |                                                      |
+
+|
+
+               | Feature is expected to handle incorrect password input     | Entered an incorrect password                 | Error message displayed                       | Test concluded and passed                  | ![screenshot](documentation/defensive/incorrect-def.png) |
+
+## User Stories Testing
+
+The below table details each user story and the evidence showing the project meets each story.
+
+| Story ID | Description                                                                                 | Screenshot / Description                                                                                                                                                 |
+
+| -------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+
+| US001    | As a user, I want to register and create an account.                                        | ![screenshot](documentation/user-stories/001-register.png)                                                                                                                |
+
+| US002    | As a user, I want to log in and log out.                                                    | ![screenshot](documentation/user-stories/002-login-logout.png)                                                                                                            |
+
+| US003    | As a user, I want to create a quiz.                                                         | ![screenshot](documentation/user-stories/003-create-quiz.png)                                                                                                             |
+
+| US004    | As a user, I want to update my quiz.                                                        | ![screenshot](documentation/user-stories/004-update-quiz.png)                                                                                                             |
+
+| US005    | As a user, I want to delete my quiz.                                                        | ![screenshot](documentation/user-stories/005-delete-quiz.png)                                                                                                             |
+
+| US006    | As a user, I want to view and play quizzes.                                                 | ![screenshot](documentation/user-stories/006-view-play-quizzes.png)                                                                                                       |
+
+| US007    | As a user, I want to view my quiz results.                                                  | ![screenshot](documentation/user-stories/007-view-results.png)                                                                                                            |
+
+| US008    | As a user, I want to have a profile page showing my details and quizzes.                    | ![screenshot](documentation/user-stories/008-profile.png)                                                                                                                 |
+
+| US009    | As a user, I want to reset my password.                                                     | ![screenshot](documentation/user-stories/009-reset-password.png)                                                                                                          |
+
+| US010    | As an admin, I want to manage users and quizzes.                                            | ![screenshot](documentation/user-stories/010-admin-manage.png)                                                                                                            |
+
+## Manual Testing
+
+The below table provides evidence of manual testing carried out for each feature.
+
+| Feature             | Test                                                        | Expected Outcome                                          | Screenshot                                                      | Pass/Fail |
+
+| ------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | --------- |
+
+| Register            | Register a new user                                         | User is registered and redirected to the login page       | ![screenshot](documentation/manual/register.png)                 | Pass      |
+
+| Login               | Log in with registered user                                 | User is logged in and redirected to the profile page      | ![screenshot](documentation/manual/login.png)                    | Pass      |
+
+| Create Quiz         | Create a new quiz                                           | Quiz is created and displayed on the profile page         | ![screenshot](documentation/manual/create-quiz.png)              | Pass      |
+
+| Update Quiz         | Update an existing quiz                                     | Quiz is updated and displayed on the profile page         | ![screenshot](documentation/manual/update-quiz.png)              | Pass      |
+
+| Delete Quiz         | Delete an existing quiz                                     | Quiz is deleted and removed from the profile page         | ![screenshot](documentation/manual/delete-quiz.png)              | Pass      |
+
+| View Quizzes        | View all quizzes                                            | All quizzes are displayed                                 | ![screenshot](documentation/manual/view-quizzes.png)             | Pass      |
+
+| Play Quiz           | Play a quiz                                                 | Quiz is played and results are displayed                  | ![screenshot](documentation/manual/play-quiz.png)                | Pass      |
+
+| View Results        | View quiz results                                           | Quiz results are displayed                                | ![screenshot](documentation/manual/view-results.png)             | Pass      |
+
+| Profile             | View profile page                                           | Profile page is displayed with user details and quizzes   | ![screenshot](documentation/manual/profile.png)                  | Pass      |
+
+| Reset Password      | Reset password for a user                                   | Password reset link is sent to the user                   | ![screenshot](documentation/manual/reset-password.png)           | Pass      |
+
+| Admin Manage Users  | Admin views and manages users                               | Admin can view, edit, and delete users                    | ![screenshot](documentation/manual/admin-manage-users.png)       | Pass      |
+
+| Admin Manage Quizzes| Admin views and manages quizzes                             | Admin can view, edit, and delete quizzes                  | ![screenshot](documentation/manual/admin-manage-quizzes.png)     | Pass      |
+
+## Automated Testing
+
+The below table provides evidence of automated testing carried out for each feature.
+
+| Feature             | Test                                                        | Expected Outcome                                          | Screenshot                                                      | Pass/Fail |
+
+| ------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | --------- |
+
+| Register            | Automated test for user registration                        | User is registered                                        | ![screenshot](documentation/automated/register.png)              | Pass      |
+
+| Login               | Automated test for user login                               | User is logged in                                         | ![screenshot](documentation/automated/login.png)                 | Pass      |
+
+| Create Quiz         | Automated test for creating a new quiz                      | Quiz is created                                           | ![screenshot](documentation/automated/create-quiz.png)           | Pass      |
+
+| Update Quiz         | Automated test for updating an existing quiz                | Quiz is updated                                           | ![screenshot](documentation/automated/update-quiz.png)           | Pass      |
+
+| Delete Quiz         | Automated test for deleting an existing quiz                | Quiz is deleted                                           | ![screenshot](documentation/automated/delete-quiz.png)           | Pass      |
+
+| View Quizzes        | Automated test for viewing all quizzes                      | All quizzes are displayed                                 | ![screenshot](documentation/automated/view-quizzes.png)          | Pass      |
+
+| Play Quiz           | Automated test for playing a quiz                           | Quiz is played                                            | ![screenshot](documentation/automated/play-quiz.png)             | Pass      |
+
+| View Results        | Automated test for viewing quiz results                     | Quiz results are displayed                                | ![screenshot](documentation/automated/view-results.png)          | Pass      |
+
+| Profile             | Automated test for viewing the profile page                 | Profile page is displayed                                 | ![screenshot](documentation/automated/profile.png)               | Pass      |
+
+| Reset Password      | Automated test for resetting password                       | Password reset link is sent                               | ![screenshot](documentation/automated/reset-password.png)        | Pass      |
+
+| Admin Manage Users  | Automated test for admin to manage users                    | Admin can manage users                                    | ![screenshot](documentation/automated/admin-manage-users.png)    | Pass      |
+
+| Admin Manage Quizzes| Automated test for admin to manage quizzes                  | Admin can manage quizzes                                  | ![screenshot](documentation/automated/admin-manage-quizzes.png)  | Pass      |
+
+### Automated Test Coverage
+
+I have used [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.5) to check the test coverage of my project.
+
+| Coverage Report    | Screenshot                                                      | Notes                                                      |
+
+| ------------------ | --------------------------------------------------------------- | ---------------------------------------------------------- |
+
+| Summary            | ![screenshot](documentation/coverage/summary.png)               | Overall test coverage is above 80%                         |
+
+| Detailed           | ![screenshot](documentation/coverage/detailed.png)              | Detailed coverage report showing coverage for each file    |
+
 ## Data Storage
 
 The Quizulu App utilizes SQLite for efficient data storage and management. Here's how the data is organized and utilized within the app:
@@ -336,3 +586,16 @@ To clone the Quizulu App repository from GitHub:
 The Quizulu App does not require external APIs for its core functionality. All necessary data is managed internally through the SQLite database and Django models. If you plan to integrate additional features that require APIs, please refer to the respective API documentation for setup instructions.
 
 For further instructions and detailed steps on deploying and managing your Heroku app, refer to the Heroku documentation and the Django deployment guide.
+
+
+## Acknowledgements: 
+- A very special thanks to Pascal the most helpful person i ever met.  He has helped me tremendously with ideas, fixes and feedback.
+
+- I also want to thank my Mentor Rory-Patrick who gave me so many tips and tricks, and inspired me along the way.
+
+- Also very special thanks to my dog who provided emotional support and times to unwind.
+
+- I thank all my peers in my course, who provided a lot of support and feedback!
+
+- I thank all my family members and friends who not only gave feedback and support but also tested it on their devices.
+> Written with [StackEdit](https://stackedit.io/).
