@@ -300,6 +300,11 @@ select textarea {
     border-color: #007356;
 }
 
+.btn-success {
+    background-color: #007356; 
+    color: #FFFFFF; 
+}
+
 .form-check {
     margin: 10px 0;
 }
