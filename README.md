@@ -145,7 +145,7 @@ Alex spends the next hour crafting challenging questions and perfecting the quiz
 
 ### Program Flowchart
 
-![screenshot](documentation/validation/programflowchart/programmflowchart.png)
+![screenshot](documentation/programflowchart/programmflowchart.png)
 
 ## Features
 
@@ -249,15 +249,11 @@ To run the script, use the following command in the terminal:
 ### External Services
 - **Open Trivia Database API**: An external API used to fetch quiz questions for populating the application database.
 
-# Testing
+## Testing
 
-> [!NOTE]  
+### Code Validation
 
-> Return back to the [README.md](README.md) file.
-
-## Code Validation
-
-### HTML
+#### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
@@ -276,7 +272,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | quizulu | my_quizzes.html | ![screenshot](documentation/validation/html/w3chtmlvalidatormyquizzes.png) | 
 | quizulu | quiz_detail.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorquizdetail.png) | 
 
-### CSS
+#### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
@@ -284,7 +280,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | --- | --- | --- | 
 | quizulu | style.css | ![screenshot](documentation/validation/css/w3ccssvalidator.png) |
 
-### JavaScript
+#### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
@@ -292,60 +288,68 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | --- | --- | --- |
 | quizulu | script.js | ![screenshot](documentation/validation/js/jshintes6validator.png) |  
 
-### Python
+#### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-| Directory | File | Screenshot |
-| --- | --- | --- | --- |
-| quiz_app | apps.py | ![screenshot](documentation/validation/python/cipythonquizappappspy.png) |   
-| quiz_app | forms.py | ![screenshot](documentation/validation/python/cipythonquizappformspy.png) |    
-| quiz_app | models.py | ![screenshot](documentation/validation/python/cipythonquizappmodelspy.png) |    
-| quiz_app | urls.py | ![screenshot](documentation/validation/python/cipythonquizappurlspy.png) |    
-| quiz_app | views.py | ![screenshot](documentation/validation/python/cipythonquizappviewspy.png) |
-| quiz_app | populate_quizzes.py | ![screenshot](documentation/validation/python/cipythonquizapppopulatequizzespy.png) |    
-| users | apps.py | ![screenshot](documentation/validation/python/cipythonusersappspy.png) |
-| users | forms.py | ![screenshot](documentation/validation/python/cipythonusersformspy.png) |    
-| users | views.py | ![screenshot](documentation/validation/python/cipythonusersviews.png) |    
-| users | models.py | ![screenshot](documentation/validation/python/cipythonusersmodelspy.png) |
-| users | signals.py | ![screenshot](documentation/validation/python/cipythonuserssignalspy.png) |    
-| quizulu_django_project| urls.py | ![screenshot](documentation/validation/python/cipythonquizuludjangoprojecturlspy.png) | 
+apps.py  
+![screenshot](documentation/validation/python/cipythonquizappappspy.png)   
+forms.py
+![screenshot](documentation/validation/python/cipythonquizappformspy.png)    
+models.py 
+![screenshot](documentation/validation/python/cipythonquizappmodelspy.png) |    
+urls.py
+![screenshot](documentation/validation/python/cipythonquizappurlspy.png) |    
+views.py
+![screenshot](documentation/validation/python/cipythonquizappviewspy.png) |
+populate_quizzes.py
+![screenshot](documentation/validation/python/cipythonquizapppopulatequizzespy.png) |    
+apps.py
+![screenshot](documentation/validation/python/cipythonusersappspy.png) |
+forms.py
+![screenshot](documentation/validation/python/cipythonusersformspy.png) |    
+views.py
+![screenshot](documentation/validation/python/cipythonusersviews.png) |    
+models.py
+![screenshot](documentation/validation/python/cipythonusersmodelspy.png) |
+signals.py
+![screenshot](documentation/validation/python/cipythonuserssignalspy.png) |    
+urls.py
+![screenshot](documentation/validation/python/cipythonquizuludjangoprojecturlspy.png) | 
 
 Lighthouse Audit
 ----------------
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-#### Desktop
+##### Desktop
 | Page | Screenshot |
 | --- | --- |
 | Index |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopindex.png)  | 
 | Register | ![screenshot](documentation/validation/lighthouse/lighthousedesktopregister.png) | 
 | Login | ![screenshot](documentation/validation/lighthouse/lighthousedesktoplogin.png) | 
-| Logout |  ![screenshot](documentation/validation/lighthouse/lighthousedesktoplogout.png)  | 
 | Categories |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopcategories.png)  | 
 | Profile |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopprofile.png)| 
 | Leaderboard |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopleaderboard.png)  | 
 | My Quizzes|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopmyquizzes.png)  | 
-| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquestioncreator.png)  | 
+| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquestionscreator.png)  | 
 | Quiz Play |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizplay.png)  | 
 | Quiz Creator |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizcreator.png)  |
 | Quiz Details|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizdetails.png)  | 
 | Quiz Editor|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizeditor.png)  | 
 | Quiz Result|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizresults.png)  | 
 
-#### Mobile
+##### Mobile
 | Page | Screenshot |
 | --- | --- |
 | Index |  ![screenshot](documentation/validation/lighthouse/lighthousemobileindex.png)  | 
 | Register | ![screenshot](documentation/validation/lighthouse/lighthousemobileregister.png) | 
 | Login | ![screenshot](documentation/validation/lighthouse/lighthousemobilelogin.png) | 
-| Logout |  ![screenshot](documentation/validation/lighthouse/lighthousemobilelogout.png)  | 
 | Categories |  ![screenshot](documentation/validation/lighthouse/lighthousemobilecategories.png)  | 
 | Profile |  ![screenshot](documentation/validation/lighthouse/lighthousemobileprofile.png)| 
 | Leaderboard |  ![screenshot](documentation/validation/lighthouse/lighthousemobileleaderboard.png)  | 
 | My Quizzes|  ![screenshot](documentation/validation/lighthouse/lighthousemobilemyquizzes.png)  | 
-| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequestioncreator.png)  | 
+| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequestionscreator.png)  | 
 | Quiz Play |  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizplay.png)  | 
 | Quiz Creator |  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizcreator.png)  |
 | Quiz Details|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizdetails.png)  | 
@@ -365,32 +369,21 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 ## Manual Testing
 
 The below table provides evidence of manual testing carried out for each feature.
+  
 
-| Feature             | Test                                                        | Expected Outcome                                          | Screenshot                                                      | Pass/Fail |
-
+| Feature | Test | Expected Outcome | Screenshot | Pass/Fail |
 | ------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | --------- |
-
-| Register            | Register a new user                                         | User is registered and redirected to the login page       | ![screenshot](documentation/manual/manualtestingregister.png)                 | Pass      |
-
-| Login               | Log in with registered user                                 | User is logged in and redirected to the profile page      | ![screenshot](documentation/manual/manualtestinglogin.png)                    | Pass      |
-
-| Create Quiz         | Create a new quiz                                           | Quiz is created and displayed on the profile page         | ![screenshot](documentation/manual/manualtestingquizcreator.png)              | Pass      |
-
-| Update Quiz         | Update an existing quiz                                     | Quiz is updated and displayed on the profile page         | ![screenshot](documentation/manual/manualtestingupdatequiz.png)              | Pass      |
-
-| Delete Quiz         | Delete an existing quiz                                     | Quiz is deleted and removed from the profile page         | ![screenshot](documentation/manual/manualtestingdeletequiz.png)              | Pass      |
-
-| View Quizzes        | View all quizzes                                            | All quizzes are displayed                                 | ![screenshot](documentation/manual/manualtestingquizview.png)             | Pass      |
-
-| Play Quiz           | Play a quiz                                                 | Quiz is played and results are displayed                  | ![screenshot](documentation/manual/manualtestingquizplay.png)                | Pass      |
-
-| View Results        | View quiz results                                           | Quiz results are displayed                                | ![screenshot](documentation/manual/manualtestingresults.png)             | Pass      |
-
-| Profile             | View profile page                                           | Profile page is displayed with user details and quizzes   | ![screenshot](documentation/manual/manualtestingprofile.png)                  | Pass      |
-
-| Admin Manage Users  | Admin views and manages users                               | Admin can view, edit, and delete users                    | ![screenshot](documentation/manual/manualtestingadminusers.png)       | Pass      |
-
-| Admin Manage Quizzes| Admin views and manages quizzes                             | Admin can view, edit, and delete quizzes                  | ![screenshot](documentation/manual/manualtestingadminquizs.png)     | Pass      |
+| Register | Register a new user | User is registered and redirected to the login page | ![screenshot](documentation/manual/manualtestingregister.png) | Pass |
+| Login | Log in with registered user | User is logged in and redirected to the profile page | ![screenshot](documentation/manual/manualtestinglogin.png) | Pass |
+| Create Quiz | Create a new quiz | Quiz is created and displayed on the profile page | ![screenshot](documentation/manual/manualtestingquizcreator.png)| Pass |
+| Update Quiz | Update an existing quiz | Quiz is updated and displayed on the profile page | ![screenshot](documentation/manual/manualtestingupdatequiz.png) | Pass |
+| Delete Quiz | Delete an existing quiz | Quiz is deleted and removed from the profile page | ![screenshot](documentation/manual/manualtestingdeletequiz.png) | Pass |
+| View Quizzes | View all quizzes | All quizzes are displayed | ![screenshot](documentation/manual/manualtestingquizview.png) | Pass |
+| Play Quiz | Play a quiz | Quiz is played and results are displayed | ![screenshot](documentation/manual/manualtestingquizplay.png) | Pass |
+| View Results | View quiz results | Quiz results are displayed | ![screenshot](documentation/manual/manualtestingresults.png) | Pass |
+| Profile | View profile page | Profile page is displayed with user details and quizzes | ![screenshot](documentation/manual/manualtestingprofile.png) | Pass |
+| Admin Manage Users | Admin views and manages users | Admin can view, edit, and delete users | ![screenshot](documentation/manual/manualtestingadminusers.png) | Pass |
+| Admin Manage Quizzes| Admin views and manages quizzes | Admin can view, edit, and delete quizzes | ![screenshot](documentation/manual/manualtestingadminquizs.png) | Pass |
 
 ### Mobile Testing
 
@@ -425,49 +418,47 @@ The below table provides evidence of manual testing carried out for each feature
 
 ### Development Bugs
 
--   **ImportError in `urls.py`**:
+-   **Issue**: ImportError was raised due to incorrect import in `quiz_app/urls.py`.
+-   **Solution**: Correct the import statement to refer to the correct views module. For example, change `from .templates.quiz_app import views` to `from . import views`.-   **Class-Based Views (CBVs) Login Requirement**:
 
-    -   **Issue**: ImportError was raised due to incorrect import in `quiz_app/urls.py`.
-    -   **Solution**: Correct the import statement to refer to the correct views module. For example, change `from .templates.quiz_app import views` to `from . import views`.-   **Class-Based Views (CBVs) Login Requirement**:
+-   **Issue**: `login_required` decorator was used on CBVs, which is not appropriate.
+-   **Solution**: Use `LoginRequiredMixin` for class-based views to enforce login requirements.-   **`urls.py` Configuration**:
 
-    -   **Issue**: `login_required` decorator was used on CBVs, which is not appropriate.
-    -   **Solution**: Use `LoginRequiredMixin` for class-based views to enforce login requirements.-   **`urls.py` Configuration**:
+-   **Issue**: The URL patterns were not correctly defined, causing routing issues.
+-   **Solution**: Ensure the `urlpatterns` list in `quizulu_django_project/urls.py` correctly includes paths from `quiz_app`.-   **Missing Templates**:
 
-    -   **Issue**: The URL patterns were not correctly defined, causing routing issues.
-    -   **Solution**: Ensure the `urlpatterns` list in `quizulu_django_project/urls.py` correctly includes paths from `quiz_app`.-   **Missing Templates**:
+-   **Issue**: Errors due to missing templates or incorrect template paths.
+-   **Solution**: Verify the existence and correct paths of all templates used in the views (e.g., `quiz_app/quiz_detail.html`, `quiz_app/play_quiz.html`).-   **Model Relationship Issues**:
 
-    -   **Issue**: Errors due to missing templates or incorrect template paths.
-    -   **Solution**: Verify the existence and correct paths of all templates used in the views (e.g., `quiz_app/quiz_detail.html`, `quiz_app/play_quiz.html`).-   **Model Relationship Issues**:
+-   **Issue**: Incorrect relationships between models causing errors.
+-   **Solution**: Ensure the models (`Quiz`, `Question`, `UserQuizProgress`) are correctly defined with proper foreign key relationships.-   **Form Validation**:
 
-    -   **Issue**: Incorrect relationships between models causing errors.
-    -   **Solution**: Ensure the models (`Quiz`, `Question`, `UserQuizProgress`) are correctly defined with proper foreign key relationships.-   **Form Validation**:
+-   **Issue**: Forms not validating correctly or not saving user data.
+-   **Solution**: Properly configure forms and handle form validation in the views (e.g., `QuizForm` in `MyQuizCreateView`).-   **QuerySet Handling**:
 
-    -   **Issue**: Forms not validating correctly or not saving user data.
-    -   **Solution**: Properly configure forms and handle form validation in the views (e.g., `QuizForm` in `MyQuizCreateView`).-   **QuerySet Handling**:
+-   **Issue**: Incorrect handling of QuerySets leading to runtime errors.
+-   **Solution**: Ensure that QuerySets are correctly filtered and handled. For example, `Quiz.objects.values_list('category', flat=True).distinct()` to get distinct categories.-   **Redirection Logic**:
 
-    -   **Issue**: Incorrect handling of QuerySets leading to runtime errors.
-    -   **Solution**: Ensure that QuerySets are correctly filtered and handled. For example, `Quiz.objects.values_list('category', flat=True).distinct()` to get distinct categories.-   **Redirection Logic**:
+-   **Issue**: Incorrect redirection after form submission or quiz completion.
+-   **Solution**: Correctly use `redirect` and `reverse_lazy` to manage URL redirection after various actions.-   **User Progress Tracking**:
 
-    -   **Issue**: Incorrect redirection after form submission or quiz completion.
-    -   **Solution**: Correctly use `redirect` and `reverse_lazy` to manage URL redirection after various actions.-   **User Progress Tracking**:
+-   **Issue**: Issues in tracking user progress within a quiz.
+-   **Solution**: Correctly implement logic to track and update user progress in `UserQuizProgress`.-   **Shuffling Answers**:
 
-    -   **Issue**: Issues in tracking user progress within a quiz.
-    -   **Solution**: Correctly implement logic to track and update user progress in `UserQuizProgress`.-   **Shuffling Answers**:
+-   **Issue**: Shuffling answers incorrectly or not shuffling at all.
+-   **Solution**: Properly use Python's `random.shuffle` to shuffle quiz answers before presenting them to the user.-   **Handling POST Requests**:
 
-    -   **Issue**: Shuffling answers incorrectly or not shuffling at all.
-    -   **Solution**: Properly use Python's `random.shuffle` to shuffle quiz answers before presenting them to the user.-   **Handling POST Requests**:
+-   **Issue**: Issues in handling POST requests in the `play_quiz` view.
+-   **Solution**: Correctly parse and handle form data submitted via POST requests to process quiz answers.-   **Error Logging**:
 
-    -   **Issue**: Issues in handling POST requests in the `play_quiz` view.
-    -   **Solution**: Correctly parse and handle form data submitted via POST requests to process quiz answers.-   **Error Logging**:
+-   **Issue**: Lack of proper error logging making it difficult to debug.
+-   **Solution**: Implement logging using Python's `logging` module to log errors and important actions in the application.-   **Database Migrations**:
 
-    -   **Issue**: Lack of proper error logging making it difficult to debug.
-    -   **Solution**: Implement logging using Python's `logging` module to log errors and important actions in the application.-   **Database Migrations**:
+-   **Issue**: Errors during `makemigrations` or `migrate` commands.
+-   **Solution**: Ensure all models are correctly defined and registered in `admin.py`. Run `python manage.py makemigrations` and `python manage.py migrate` to apply changes to the database schema.-   **User Authentication**:
 
-    -   **Issue**: Errors during `makemigrations` or `migrate` commands.
-    -   **Solution**: Ensure all models are correctly defined and registered in `admin.py`. Run `python manage.py makemigrations` and `python manage.py migrate` to apply changes to the database schema.-   **User Authentication**:
-
-    -   **Issue**: Problems with user authentication and access control.
-    -   **Solution**: Implement proper authentication checks using decorators and mixins to ensure only authorized users can access certain views.
+-   **Issue**: Problems with user authentication and access control.
+-   **Solution**: Implement proper authentication checks using decorators and mixins to ensure only authorized users can access certain views.
 
 ## Data Storage
 
