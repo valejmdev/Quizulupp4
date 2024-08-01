@@ -13,15 +13,13 @@ This project was created as part of Code Institute's Full Stack Software Develop
   - [Persona](#persona)
   - [Program Flowchart](#program-flowchart)
 - [Features](#features)
-  - [Username Validation](#username-validation)
-  - [Category Selection](#category-selection)
-  - [Question Generation](#question-generation)
-  - [Interactive Gameplay](#interactive-gameplay)
-  - [Scoring System](#scoring-system)
+  - [User Registration and Login](#user-registration-and-login)
+  - [User Profile](#user-profile)
+  - [Quiz Management](#quiz-management)
+  - [Question Creation](#question-creation)
+  - [Categories and Random Quiz](#categories-and-random-quiz)
   - [Leaderboard](#leaderboard)
-  - [Game Options](#game-options)
-  - [User Feedback](#user-feedback)
-  - [Loading Animation](#loading-animation)
+  - [Initial Data Population Script](#initial-data-population-script)
 - [Technologies Used](#technologies-used)
 - [Data Storage](#data-storage)
 - [Testing](#testing)
@@ -147,6 +145,8 @@ Alex spends the next hour crafting challenging questions and perfecting the quiz
 
 ### Program Flowchart
 
+![screenshot](documentation/validation/programflowchart/programmflowchart.png)
+
 ## Features
 
 #### User Registration and Login
@@ -261,167 +261,106 @@ To run the script, use the following command in the terminal:
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Directory     | File                | Screenshot                                       | Notes |
-
-| ------------- | ------------------- | ------------------------------------------------ | ----- |
-
-| quizulu       | home.html           | ![screenshot](documentation/validation/test-home.png) |       |
-
-| quizulu       | register.html       | ![screenshot](documentation/validation/html-register-v.png) |       |
-
-| quizulu       | login.html          | ![screenshot](documentation/validation/html-login-v.png) |       |
-
-| quizulu       | profile.html        | ![screenshot](documentation/validation/html-profile-v.png) |       |
-
-| quizulu       | create_quiz.html    | ![screenshot](documentation/validation/html-create-quiz-v.png) |       |
-
-| quizulu       | update_quiz.html    | ![screenshot](documentation/validation/html-update-quiz-v.png) |       |
-
-| quizulu       | delete_quiz.html    | ![screenshot](documentation/validation/html-delete-quiz-v.png) |       |
-
-| quizulu       | play_quiz.html      | ![screenshot](documentation/validation/html-play-quiz-v.png) |       |
-
-| quizulu       | quiz_results.html   | ![screenshot](documentation/validation/html-quiz-results-v.png) |       |
+| Directory | File | Screenshot |
+| --- | --- | --- |
+| quizulu | index.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorhome.png) |  
+| quizulu | categories.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorcategories.png) |
+| quizulu | profile.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorprofile.png) |  
+| quizulu | leaderboard.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorleaderboard.png) |  
+| quizulu | login.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorlogin.png) |  
+| quizulu | logout.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorlogout.png) |  
+| quizulu | quiz_play.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorquizplay.png) |  
+| quizulu | question_creator.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorquestioncreator.png) |  
+| quizulu | quiz_creator.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorquizcreator.png) |  
+| quizulu | register.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorregister.png) |  
+| quizulu | my_quizzes.html | ![screenshot](documentation/validation/html/w3chtmlvalidatormyquizzes.png) | 
+| quizulu | quiz_detail.html | ![screenshot](documentation/validation/html/w3chtmlvalidatorquizdetail.png) | 
 
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
-| Directory | File       | Screenshot                                           | Notes |
-
-| --------- | ---------- | ---------------------------------------------------- | ----- |
-
-| quizulu   | style.css  | ![screenshot](documentation/validation/css-valid.png) |       |
+| Directory | File | Screenshot |
+| --- | --- | --- | 
+| quizulu | style.css | ![screenshot](documentation/validation/css/w3ccssvalidator.png) |
 
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-| Directory | File       | Screenshot                                           | Notes |
-
-| --------- | ---------- | ---------------------------------------------------- | ----- |
-
-| quizulu   | script.js  | ![screenshot](documentation/validation/js-valid.png)  |       |
+| Directory | File | Screenshot 
+| --- | --- | --- |
+| quizulu | script.js | ![screenshot](documentation/validation/js/jshintes6validator.png) |  
 
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-| Directory    | File                | CI URL                                                                                                                  | Screenshot                                           | Notes |
+| Directory | File | Screenshot |
+| --- | --- | --- | --- |
+| quiz_app | apps.py | ![screenshot](documentation/validation/python/cipythonquizappappspy.png) |   
+| quiz_app | forms.py | ![screenshot](documentation/validation/python/cipythonquizappformspy.png) |    
+| quiz_app | models.py | ![screenshot](documentation/validation/python/cipythonquizappmodelspy.png) |    
+| quiz_app | urls.py | ![screenshot](documentation/validation/python/cipythonquizappurlspy.png) |    
+| quiz_app | views.py | ![screenshot](documentation/validation/python/cipythonquizappviewspy.png) |
+| quiz_app | populate_quizzes.py | ![screenshot](documentation/validation/python/cipythonquizapppopulatequizzespy.png) |    
+| users | apps.py | ![screenshot](documentation/validation/python/cipythonusersappspy.png) |
+| users | forms.py | ![screenshot](documentation/validation/python/cipythonusersformspy.png) |    
+| users | views.py | ![screenshot](documentation/validation/python/cipythonusersviews.png) |    
+| users | models.py | ![screenshot](documentation/validation/python/cipythonusersmodelspy.png) |
+| users | signals.py | ![screenshot](documentation/validation/python/cipythonuserssignalspy.png) |    
+| quizulu_django_project| urls.py | ![screenshot](documentation/validation/python/cipythonquizuludjangoprojecturlspy.png) | 
 
-| ------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----- |
-
-| quizulu      | admin.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/admin.py)         | ![screenshot](documentation/validation/admin-py-v.png) |       |
-
-| quizulu      | forms.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/forms.py)         | ![screenshot](documentation/validation/forms-py-v.png) |       |
-
-| quizulu      | models.py           | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/models.py)        | ![screenshot](documentation/validation/models-py-v.png) |       |
-
-| quizulu      | urls.py             | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/urls.py)          | ![screenshot](documentation/validation/urls-py-v.png) |       |
-
-| quizulu      | views.py            | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/quizulu/views.py)         | ![screenshot](documentation/validation/views-py-v.png) |       |
-
-| quizulu      | manage.py           | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/manage.py)                | ![screenshot](documentation/validation/manage-py-v.png) |       |
-
-| my_project   | settings.py         | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/my_project/settings.py)    | ![screenshot](documentation/validation/settings-py-v.png) |       |
-
-| my_project   | urls.py             | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/username/quizulu/main/my_project/urls.py)        | ![screenshot](documentation/validation/urls-py-v.png) |       |
-
-## Browser Compatibility
-
-I've tested my deployed project on multiple browsers to check for compatibility issues.
-
-| Browser   | Home                                    | Register                                | Login                                 | Profile                                | Notes |
-
-| --------- | --------------------------------------- | --------------------------------------- | ------------------------------------- | --------------------------------------- | ----- |
-
-| Chrome    | ![screenshot](documentation/browsers/desk-chrome-home.png) | ![screenshot](documentation/browsers/desk-chrome-register.png) | ![screenshot](documentation/browsers/desk-chrome-login.png) | ![screenshot](documentation/browsers/desk-chrome-profile.png) | Works as expected |
-
-| Firefox   | ![screenshot](documentation/browsers/desk-fire-home.png)   | ![screenshot](documentation/browsers/desk-fire-register.png)   | ![screenshot](documentation/browsers/desk-fire-login.png)   | ![screenshot](documentation/browsers/desk-fire-profile.png)   | Works as expected |
-
-| Safari    | ![screenshot](documentation/browsers/desk-safari-home.png) | ![screenshot](documentation/browsers/desk-safari-register.png) | ![screenshot](documentation/browsers/desk-safari-login.png) | ![screenshot](documentation/browsers/desk-safari-profile.png) | Minor CSS differences |
-
-## Responsiveness
-
-I've tested my deployed project on multiple devices to check for responsiveness issues.
-
-| Device             | Home                                    | Register                                | Login                                 | Profile                                | Notes            |
-
-| ------------------ | --------------------------------------- | --------------------------------------- | ------------------------------------- | --------------------------------------- | ---------------- |
-
-| Mobile (DevTools)  | ![screenshot](documentation/responsiveness/Mob-home.jpeg) | ![screenshot](documentation/responsiveness/Mob-register.jpeg) | ![screenshot](documentation/responsiveness/Mob-login.jpeg) | ![screenshot](documentation/responsiveness/Mob-profile.jpeg) | Works as expected |
-
-| Tablet (DevTools)  | ![screenshot](documentation/responsiveness/Tab-home.png) | ![screenshot](documentation/responsiveness/Tab-register.png) | ![screenshot](documentation/responsiveness/Tab-login.png) | ![screenshot](documentation/responsiveness/Tab-profile.png) | Works as expected |
-
-| Desktop            | ![screenshot](documentation/responsiveness/desk-chrome-home.png) | ![screenshot](documentation/responsiveness/Desk-register.png) | ![screenshot](documentation/responsiveness/desk-chrome-login.png) | ![screenshot](documentation/responsiveness/desk-chrome-profile.png) | Works as expected |
-
-## Lighthouse Audit
+Lighthouse Audit
+----------------
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page          | Mobile                                        | Desktop                                       | Notes                                      |
+#### Desktop
+| Page | Screenshot |
+| --- | --- |
+| Index |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopindex.png)  | 
+| Register | ![screenshot](documentation/validation/lighthouse/lighthousedesktopregister.png) | 
+| Login | ![screenshot](documentation/validation/lighthouse/lighthousedesktoplogin.png) | 
+| Logout |  ![screenshot](documentation/validation/lighthouse/lighthousedesktoplogout.png)  | 
+| Categories |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopcategories.png)  | 
+| Profile |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopprofile.png)| 
+| Leaderboard |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopleaderboard.png)  | 
+| My Quizzes|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopmyquizzes.png)  | 
+| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquestioncreator.png)  | 
+| Quiz Play |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizplay.png)  | 
+| Quiz Creator |  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizcreator.png)  |
+| Quiz Details|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizdetails.png)  | 
+| Quiz Editor|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizeditor.png)  | 
+| Quiz Result|  ![screenshot](documentation/validation/lighthouse/lighthousedesktopquizresults.png)  | 
 
-| ------------- | --------------------------------------------- | --------------------------------------------- | ------------------------------------------ |
+#### Mobile
+| Page | Screenshot |
+| --- | --- |
+| Index |  ![screenshot](documentation/validation/lighthouse/lighthousemobileindex.png)  | 
+| Register | ![screenshot](documentation/validation/lighthouse/lighthousemobileregister.png) | 
+| Login | ![screenshot](documentation/validation/lighthouse/lighthousemobilelogin.png) | 
+| Logout |  ![screenshot](documentation/validation/lighthouse/lighthousemobilelogout.png)  | 
+| Categories |  ![screenshot](documentation/validation/lighthouse/lighthousemobilecategories.png)  | 
+| Profile |  ![screenshot](documentation/validation/lighthouse/lighthousemobileprofile.png)| 
+| Leaderboard |  ![screenshot](documentation/validation/lighthouse/lighthousemobileleaderboard.png)  | 
+| My Quizzes|  ![screenshot](documentation/validation/lighthouse/lighthousemobilemyquizzes.png)  | 
+| Question Creator|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequestioncreator.png)  | 
+| Quiz Play |  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizplay.png)  | 
+| Quiz Creator |  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizcreator.png)  |
+| Quiz Details|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizdetails.png)  | 
+| Quiz Editor|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizeditor.png)  | 
+| Quiz Result|  ![screenshot](documentation/validation/lighthouse/lighthousemobilequizresults.png)  | 
 
-| Home          | ![screenshot](documentation/lighthouse/lighthouse-mob-home.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-home.png) | Slow response time due to large images     |
 
-| Register      | ![screenshot](documentation/lighthouse/lighthouse-mob-register.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-register.png) | Some minor warnings                        |
+### General Testing
+-   Each feature was developed on the main branch. 
+-   Each time a feature was added, all the functions were tested to see if there was an impact.
+-   The site was sent to friends and relatives for feedback and testing.
+-   The username input has a validation and will not submit without the proper information.
+-   .gitignore file has been included to prevent system file commits.
+-   External links open in a new tab.
 
-| Login         | ![screenshot](documentation/lighthouse/lighthouse-mob-login.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-login.png) | Some minor warnings                        |
-
-| Profile       | ![screenshot](documentation/lighthouse/lighthouse-mob-profile.png) | ![screenshot](documentation/lighthouse/lighthouse-desk-profile.png) | Some minor warnings                        |
-
-## Defensive Programming
-
-Defensive programming was manually tested with the below user acceptance testing:
-
-| Page          | Expectation                                               | Test                                          | Result                                        | Fix                                        | Screenshot                                           |
-
-| ------------- | --------------------------------------------------------- | --------------------------------------------- | --------------------------------------------- | ------------------------------------------- | ---------------------------------------------------- |
-
-| Home          |                                                           |                                               |                                               |                                              |                                                      |
-
-|               | Feature is expected to show a custom 404 page when a non-existent URL is accessed | Accessed a non-existent URL on the website | The custom 404 page was displayed as expected | Test concluded and passed                  | ![screenshot](documentation/defensive/404-t.png)     |
-
-| Register      |                                                           |                                               |                                               |                                              |                                                      |
-
-|               | Feature is expected to prevent empty submission           | Submitted an empty form                       | Form errors displayed for all fields: username, email, password | Test concluded and passed                  | ![screenshot](documentation/defensive/empty-def.png) |
-
-|               | Feature is expected to prevent invalid email submission   | Submitted a form with an invalid email        | Form error displayed for the email field      | Test concluded and passed                  | ![screenshot](documentation/defensive/email-def.png) |
-
-| Profile       |                                                           |                                               |                                               |                                              |                                                      |
-
-|
-
-               | Feature is expected to handle incorrect password input     | Entered an incorrect password                 | Error message displayed                       | Test concluded and passed                  | ![screenshot](documentation/defensive/incorrect-def.png) |
-
-## User Stories Testing
-
-The below table details each user story and the evidence showing the project meets each story.
-
-| Story ID | Description                                                                                 | Screenshot / Description                                                                                                                                                 |
-
-| -------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-
-| US001    | As a user, I want to register and create an account.                                        | ![screenshot](documentation/user-stories/001-register.png)                                                                                                                |
-
-| US002    | As a user, I want to log in and log out.                                                    | ![screenshot](documentation/user-stories/002-login-logout.png)                                                                                                            |
-
-| US003    | As a user, I want to create a quiz.                                                         | ![screenshot](documentation/user-stories/003-create-quiz.png)                                                                                                             |
-
-| US004    | As a user, I want to update my quiz.                                                        | ![screenshot](documentation/user-stories/004-update-quiz.png)                                                                                                             |
-
-| US005    | As a user, I want to delete my quiz.                                                        | ![screenshot](documentation/user-stories/005-delete-quiz.png)                                                                                                             |
-
-| US006    | As a user, I want to view and play quizzes.                                                 | ![screenshot](documentation/user-stories/006-view-play-quizzes.png)                                                                                                       |
-
-| US007    | As a user, I want to view my quiz results.                                                  | ![screenshot](documentation/user-stories/007-view-results.png)                                                                                                            |
-
-| US008    | As a user, I want to have a profile page showing my details and quizzes.                    | ![screenshot](documentation/user-stories/008-profile.png)                                                                                                                 |
-
-| US009    | As a user, I want to reset my password.                                                     | ![screenshot](documentation/user-stories/009-reset-password.png)                                                                                                          |
-
-| US010    | As an admin, I want to manage users and quizzes.                                            | ![screenshot](documentation/user-stories/010-admin-manage.png)                                                                                                            |
 
 ## Manual Testing
 
@@ -431,73 +370,104 @@ The below table provides evidence of manual testing carried out for each feature
 
 | ------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | --------- |
 
-| Register            | Register a new user                                         | User is registered and redirected to the login page       | ![screenshot](documentation/manual/register.png)                 | Pass      |
+| Register            | Register a new user                                         | User is registered and redirected to the login page       | ![screenshot](documentation/manual/manualtestingregister.png)                 | Pass      |
 
-| Login               | Log in with registered user                                 | User is logged in and redirected to the profile page      | ![screenshot](documentation/manual/login.png)                    | Pass      |
+| Login               | Log in with registered user                                 | User is logged in and redirected to the profile page      | ![screenshot](documentation/manual/manualtestinglogin.png)                    | Pass      |
 
-| Create Quiz         | Create a new quiz                                           | Quiz is created and displayed on the profile page         | ![screenshot](documentation/manual/create-quiz.png)              | Pass      |
+| Create Quiz         | Create a new quiz                                           | Quiz is created and displayed on the profile page         | ![screenshot](documentation/manual/manualtestingquizcreator.png)              | Pass      |
 
-| Update Quiz         | Update an existing quiz                                     | Quiz is updated and displayed on the profile page         | ![screenshot](documentation/manual/update-quiz.png)              | Pass      |
+| Update Quiz         | Update an existing quiz                                     | Quiz is updated and displayed on the profile page         | ![screenshot](documentation/manual/manualtestingupdatequiz.png)              | Pass      |
 
-| Delete Quiz         | Delete an existing quiz                                     | Quiz is deleted and removed from the profile page         | ![screenshot](documentation/manual/delete-quiz.png)              | Pass      |
+| Delete Quiz         | Delete an existing quiz                                     | Quiz is deleted and removed from the profile page         | ![screenshot](documentation/manual/manualtestingdeletequiz.png)              | Pass      |
 
-| View Quizzes        | View all quizzes                                            | All quizzes are displayed                                 | ![screenshot](documentation/manual/view-quizzes.png)             | Pass      |
+| View Quizzes        | View all quizzes                                            | All quizzes are displayed                                 | ![screenshot](documentation/manual/manualtestingquizview.png)             | Pass      |
 
-| Play Quiz           | Play a quiz                                                 | Quiz is played and results are displayed                  | ![screenshot](documentation/manual/play-quiz.png)                | Pass      |
+| Play Quiz           | Play a quiz                                                 | Quiz is played and results are displayed                  | ![screenshot](documentation/manual/manualtestingquizplay.png)                | Pass      |
 
-| View Results        | View quiz results                                           | Quiz results are displayed                                | ![screenshot](documentation/manual/view-results.png)             | Pass      |
+| View Results        | View quiz results                                           | Quiz results are displayed                                | ![screenshot](documentation/manual/manualtestingresults.png)             | Pass      |
 
-| Profile             | View profile page                                           | Profile page is displayed with user details and quizzes   | ![screenshot](documentation/manual/profile.png)                  | Pass      |
+| Profile             | View profile page                                           | Profile page is displayed with user details and quizzes   | ![screenshot](documentation/manual/manualtestingprofile.png)                  | Pass      |
 
-| Reset Password      | Reset password for a user                                   | Password reset link is sent to the user                   | ![screenshot](documentation/manual/reset-password.png)           | Pass      |
+| Admin Manage Users  | Admin views and manages users                               | Admin can view, edit, and delete users                    | ![screenshot](documentation/manual/manualtestingadminusers.png)       | Pass      |
 
-| Admin Manage Users  | Admin views and manages users                               | Admin can view, edit, and delete users                    | ![screenshot](documentation/manual/admin-manage-users.png)       | Pass      |
+| Admin Manage Quizzes| Admin views and manages quizzes                             | Admin can view, edit, and delete quizzes                  | ![screenshot](documentation/manual/manualtestingadminquizs.png)     | Pass      |
 
-| Admin Manage Quizzes| Admin views and manages quizzes                             | Admin can view, edit, and delete quizzes                  | ![screenshot](documentation/manual/admin-manage-quizzes.png)     | Pass      |
+### Mobile Testing
 
-## Automated Testing
+-   I tested the site personally on my Android device, going through the entire process, checking buttons, functions, restarting the game, etc. I was personally unable to test on iOS.
+-   The site was sent to friends and relatives for them to follow the same process. They have tested on their devices, only missing iOS devices.
+- The testing was done using the Google Chrome Browser. Chrome Developer Tools were used extensively, particularly to check responsiveness on different screen sizes. Testing was also done using Firefox and Opera on desktop, and again on Google Chrome and Opera and Brave on the Nothing Phone (2).
+-   Responsive on all device sizes between 320px - 2600px wide.
+-   Devices tested using the Google Developer Tools emulator:
 
-The below table provides evidence of automated testing carried out for each feature.
 
-| Feature             | Test                                                        | Expected Outcome                                          | Screenshot                                                      | Pass/Fail |
+| Device                   | Device Size    | Tested |
+|--------------------------|----------------|--------|
+| BlackBerry Z30           | 360px x 640px  | ✅     |
+| BlackBerry PlayBook      | 600px x 1024px | ✅     |
+| Samsung Galaxy Note 3    | 360px x 640px  | ✅     |
+| Samsung Galaxy S3        | 360px x 640px  | ✅     |
+| Samsung Galaxy S9+       | 320px x 658px  | ✅     |
+| LG Optimus L70           | 384px x 640px  | ✅     |
+| Microsoft Lumia 550      | 640px x 360px  | ✅     |
+| Microsoft Lumia 950      | 360px x 640px  | ✅     |
+| Nexus 4                  | 384px x 640px  | ✅     |
+| Nokia Lumia 520          | 320px x 533px  | ✅     |
+| Nokia N9                 | 480px x 854px  | ✅     |
+| Pixel 3                  | 393px x 786px  | ✅     |
+| Apple iPad Mini          | 468px x 4024px | ✅     |
+| Apple iPhone 4           | 320px x 480px  | ✅     |
+| Apple iPhone 5/S         | 320px x 568px  | ✅     |
+| Apple iPhone 6/7/8       | 375px x 667px  | ✅     |
+| Apple iPhone 6/7/8 Plus  | 414px x 736px  | ✅     |
+| Apple iPhone X           | 375px x 812px  | ✅     |
+***
 
-| ------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | --------- |
+### Development Bugs
 
-| Register            | Automated test for user registration                        | User is registered                                        | ![screenshot](documentation/automated/register.png)              | Pass      |
+-   **ImportError in `urls.py`**:
 
-| Login               | Automated test for user login                               | User is logged in                                         | ![screenshot](documentation/automated/login.png)                 | Pass      |
+    -   **Issue**: ImportError was raised due to incorrect import in `quiz_app/urls.py`.
+    -   **Solution**: Correct the import statement to refer to the correct views module. For example, change `from .templates.quiz_app import views` to `from . import views`.-   **Class-Based Views (CBVs) Login Requirement**:
 
-| Create Quiz         | Automated test for creating a new quiz                      | Quiz is created                                           | ![screenshot](documentation/automated/create-quiz.png)           | Pass      |
+    -   **Issue**: `login_required` decorator was used on CBVs, which is not appropriate.
+    -   **Solution**: Use `LoginRequiredMixin` for class-based views to enforce login requirements.-   **`urls.py` Configuration**:
 
-| Update Quiz         | Automated test for updating an existing quiz                | Quiz is updated                                           | ![screenshot](documentation/automated/update-quiz.png)           | Pass      |
+    -   **Issue**: The URL patterns were not correctly defined, causing routing issues.
+    -   **Solution**: Ensure the `urlpatterns` list in `quizulu_django_project/urls.py` correctly includes paths from `quiz_app`.-   **Missing Templates**:
 
-| Delete Quiz         | Automated test for deleting an existing quiz                | Quiz is deleted                                           | ![screenshot](documentation/automated/delete-quiz.png)           | Pass      |
+    -   **Issue**: Errors due to missing templates or incorrect template paths.
+    -   **Solution**: Verify the existence and correct paths of all templates used in the views (e.g., `quiz_app/quiz_detail.html`, `quiz_app/play_quiz.html`).-   **Model Relationship Issues**:
 
-| View Quizzes        | Automated test for viewing all quizzes                      | All quizzes are displayed                                 | ![screenshot](documentation/automated/view-quizzes.png)          | Pass      |
+    -   **Issue**: Incorrect relationships between models causing errors.
+    -   **Solution**: Ensure the models (`Quiz`, `Question`, `UserQuizProgress`) are correctly defined with proper foreign key relationships.-   **Form Validation**:
 
-| Play Quiz           | Automated test for playing a quiz                           | Quiz is played                                            | ![screenshot](documentation/automated/play-quiz.png)             | Pass      |
+    -   **Issue**: Forms not validating correctly or not saving user data.
+    -   **Solution**: Properly configure forms and handle form validation in the views (e.g., `QuizForm` in `MyQuizCreateView`).-   **QuerySet Handling**:
 
-| View Results        | Automated test for viewing quiz results                     | Quiz results are displayed                                | ![screenshot](documentation/automated/view-results.png)          | Pass      |
+    -   **Issue**: Incorrect handling of QuerySets leading to runtime errors.
+    -   **Solution**: Ensure that QuerySets are correctly filtered and handled. For example, `Quiz.objects.values_list('category', flat=True).distinct()` to get distinct categories.-   **Redirection Logic**:
 
-| Profile             | Automated test for viewing the profile page                 | Profile page is displayed                                 | ![screenshot](documentation/automated/profile.png)               | Pass      |
+    -   **Issue**: Incorrect redirection after form submission or quiz completion.
+    -   **Solution**: Correctly use `redirect` and `reverse_lazy` to manage URL redirection after various actions.-   **User Progress Tracking**:
 
-| Reset Password      | Automated test for resetting password                       | Password reset link is sent                               | ![screenshot](documentation/automated/reset-password.png)        | Pass      |
+    -   **Issue**: Issues in tracking user progress within a quiz.
+    -   **Solution**: Correctly implement logic to track and update user progress in `UserQuizProgress`.-   **Shuffling Answers**:
 
-| Admin Manage Users  | Automated test for admin to manage users                    | Admin can manage users                                    | ![screenshot](documentation/automated/admin-manage-users.png)    | Pass      |
+    -   **Issue**: Shuffling answers incorrectly or not shuffling at all.
+    -   **Solution**: Properly use Python's `random.shuffle` to shuffle quiz answers before presenting them to the user.-   **Handling POST Requests**:
 
-| Admin Manage Quizzes| Automated test for admin to manage quizzes                  | Admin can manage quizzes                                  | ![screenshot](documentation/automated/admin-manage-quizzes.png)  | Pass      |
+    -   **Issue**: Issues in handling POST requests in the `play_quiz` view.
+    -   **Solution**: Correctly parse and handle form data submitted via POST requests to process quiz answers.-   **Error Logging**:
 
-### Automated Test Coverage
+    -   **Issue**: Lack of proper error logging making it difficult to debug.
+    -   **Solution**: Implement logging using Python's `logging` module to log errors and important actions in the application.-   **Database Migrations**:
 
-I have used [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.5) to check the test coverage of my project.
+    -   **Issue**: Errors during `makemigrations` or `migrate` commands.
+    -   **Solution**: Ensure all models are correctly defined and registered in `admin.py`. Run `python manage.py makemigrations` and `python manage.py migrate` to apply changes to the database schema.-   **User Authentication**:
 
-| Coverage Report    | Screenshot                                                      | Notes                                                      |
-
-| ------------------ | --------------------------------------------------------------- | ---------------------------------------------------------- |
-
-| Summary            | ![screenshot](documentation/coverage/summary.png)               | Overall test coverage is above 80%                         |
-
-| Detailed           | ![screenshot](documentation/coverage/detailed.png)              | Detailed coverage report showing coverage for each file    |
+    -   **Issue**: Problems with user authentication and access control.
+    -   **Solution**: Implement proper authentication checks using decorators and mixins to ensure only authorized users can access certain views.
 
 ## Data Storage
 
