@@ -632,6 +632,8 @@ This project was developed as part of Code Institute's Full Stack Software Devel
 -   **Code Institute**: For providing the structure and guidelines for this project.
 -   **OpenAI**: For providing the foundational language model that assisted in the creation of this project. <https://www.openai.com>
 -   **Django Documentation**: For comprehensive resources and guides on using Django. <https://docs.djangoproject.com>
+-   **Bootstrap documentation**: For  providing a very detailed documentation to create this project. <https://getbootstrap.com/docs/4.0/getting-started/introduction/>
+-   **Miro**: For creating a programm flowchart. <https://miro.com>
 
 ### Media
 
@@ -643,6 +645,7 @@ This project was developed as part of Code Institute's Full Stack Software Devel
 -   **W3Schools**: For detailed tutorials and references on HTML, CSS, and JavaScript. <https://www.w3schools.com>
 -   **MDN Web Docs**: For comprehensive documentation on web technologies, including JavaScript and CSS. <https://developer.mozilla.org>
 -   **Stack Overflow**: For community-driven support and solutions to coding problems encountered during development. <https://stackoverflow.com>
+-   **Chat GPT**: For helping troubleshoot with code and create content for the website and the readme.md. <https://chatgpt.com>
 
 ### Inspiring Content
 
