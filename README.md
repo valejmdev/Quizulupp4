@@ -297,27 +297,27 @@ apps.py
 forms.py
 ![screenshot](documentation/validation/python/cipythonquizappformspy.png)    
 models.py 
-![screenshot](documentation/validation/python/cipythonquizappmodelspy.png) |    
+![screenshot](documentation/validation/python/cipythonquizappmodelspy.png) 
 urls.py
-![screenshot](documentation/validation/python/cipythonquizappurlspy.png) |    
+![screenshot](documentation/validation/python/cipythonquizappurlspy.png)    
 views.py
-![screenshot](documentation/validation/python/cipythonquizappviewspy.png) |
+![screenshot](documentation/validation/python/cipythonquizappviewspy.png) 
 populate_quizzes.py
-![screenshot](documentation/validation/python/cipythonquizapppopulatequizzespy.png) |    
+![screenshot](documentation/validation/python/cipythonquizapppopulatequizzespy.png)   
 apps.py
-![screenshot](documentation/validation/python/cipythonusersappspy.png) |
+![screenshot](documentation/validation/python/cipythonusersappspy.png) 
 forms.py
-![screenshot](documentation/validation/python/cipythonusersformspy.png) |    
+![screenshot](documentation/validation/python/cipythonusersformspy.png) 
 views.py
-![screenshot](documentation/validation/python/cipythonusersviews.png) |    
+![screenshot](documentation/validation/python/cipythonusersviews.png)
 models.py
-![screenshot](documentation/validation/python/cipythonusersmodelspy.png) |
+![screenshot](documentation/validation/python/cipythonusersmodelspy.png) 
 signals.py
-![screenshot](documentation/validation/python/cipythonuserssignalspy.png) |    
+![screenshot](documentation/validation/python/cipythonuserssignalspy.png)    
 urls.py
-![screenshot](documentation/validation/python/cipythonquizuludjangoprojecturlspy.png) | 
+![screenshot](documentation/validation/python/cipythonquizuludjangoprojecturlspy.png)
 
-Lighthouse Audit
+#### Lighthouse Audit
 ----------------
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
