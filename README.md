@@ -5,6 +5,7 @@
 Welcome to **Quizulu**, an engaging and interactive quiz game where you can test your knowledge across various categories! This application invites you to enter a username, select a quiz category, and answer a series of multiple-choice questions. It's a fun way to challenge yourself and learn new facts while competing for high scores.
 
 This project was created as part of Code Institute's Full Stack Software Development Diploma, demonstrating a comprehensive integration of Python, the Open Trivia API, Google Sheets API, and web development techniques.
+### View the live website [here](https://quizulupp4-c7fa45179e08.herokuapp.com)
 
 ## Table of Contents
 
