@@ -460,6 +460,68 @@ The below table provides evidence of manual testing carried out for each feature
 -   **Issue**: Problems with user authentication and access control.
 -   **Solution**: Implement proper authentication checks using decorators and mixins to ensure only authorized users can access certain views.
 
+
+## Wireframes
+
+Following you will find my initial wireframes i created while planning this project.
+I was not able to create every feature i planned, due to the time restriction.
+That means, the result you can see right now on the deployed page looks different, than the wireframes i created.
+
+### Desktop
+
+| Page | Screenshot |
+| --- | --- |
+| Index |  ![screenshot](documentation/wireframes/wireframesdesktopindex.png)  | 
+| Register | ![screenshot](documentation/wireframes/wireframesdesktopregister.png) | 
+| Gamemodes| ![screenshot](documentation/wireframes/wireframesdesktopgamemodes.png) | 
+| Categories |  ![screenshot](documentation/wireframes/wireframesdesktopcategories.png)  | 
+| Quiz Detail|  ![screenshot](documentation/wireframes/wireframesdesktopquizdetail.png)| 
+| My Quizzes |  ![screenshot](documentation/wireframes/wireframesdesktopmyquizzes.png)  | 
+| Multiple Choice Quiz |  ![screenshot](documentation/wireframes/wireframesdesktopmultiplechoicequiz.png)  | 
+| Free Writing Quiz |  ![screenshot](documentation/wireframes/wireframesdesktopfreewritingquiz.png)  | 
+| Picture Based Quiz |  ![screenshot](documentation/wireframes/wireframesdesktoppicturebasedquiz.png)  | 
+| Quiz Creator|  ![screenshot](documentation/wireframes/wireframesdesktopquizcreator.png)  | 
+| Multiple Choice Creator |  ![screenshot](documentation/wireframes/wireframesdesktopquizcreatormultiplechoice.png)  | 
+| Free Writing Creator|  ![screenshot](documentation/wireframes/wireframesdesktopquizcreatorfreewriting.png)  |
+| Picture Based Creator|  ![screenshot](documentation/wireframes/wireframesdesktopquizcreatorpicturebased.png)  | 
+
+### Tablet
+
+| Page | Screenshot |
+| --- | --- |
+| Index |  ![screenshot](documentation/wireframes/wireframestabletindex.png)  | 
+| Register | ![screenshot](documentation/wireframes/wireframestabletregister.png) | 
+| Gamemodes| ![screenshot](documentation/wireframes/wireframestabletgamemodes.png) | 
+| Categories |  ![screenshot](documentation/wireframes/wireframestabletcategories.png) | 
+| Quiz Detail|  ![screenshot](documentation/wireframes/wireframestabletquizdetail.png)| 
+| My Quizzes |  ![screenshot](documentation/wireframes/wireframestabletmyquizzes.png)  | 
+| Multiple Choice Quiz |  ![screenshot](documentation/wireframes/wireframestabletmultiplechoicequiz.png)  | 
+| Free Writing Quiz |  ![screenshot](documentation/wireframes/wireframestabletfreewritingquiz.png)  | 
+| Picture Based Quiz |  ![screenshot](documentation/wireframes/wireframestabletpicturebasedquiz.png)  | 
+| Quiz Creator|  ![screenshot](documentation/wireframes/wireframestabletquizcreator.png)  | 
+| Multiple Choice Creator |  ![screenshot](documentation/wireframes/wireframestabletquizcreatormultiplechoice.png)  | 
+| Free Writing Creator|  ![screenshot](documentation/wireframes/wireframestabletquizcreatorfreewriting.png)  |
+| Picture Based Creator|  ![screenshot](documentation/wireframes/wireframestabletquizcreatorpicturebased.png)  | 
+
+### Mobil
+
+| Page | Screenshot |
+| --- | --- |
+| Index |  ![screenshot](documentation/wireframes/wireframesmobileindex.png)  | 
+| Register | ![screenshot](documentation/wireframes/wireframesmobileregister.png) | 
+| Gamemodes| ![screenshot](documentation/wireframes/wireframesmobilegamemodes.png) | 
+| Categories |  ![screenshot](documentation/wireframes/wireframesmobilecategories.png)  | 
+| Quiz Detail|  ![screenshot](documentation/wireframes/wireframesmobilequizdetail.png)| 
+| My Quizzes |  ![screenshot](documentation/wireframes/wireframesmobilemyquizzes.png)  | 
+| Multiple Choice Quiz |  ![screenshot](documentation/wireframes/wireframesmobilemultiplechoicequiz.png)  | 
+| Free Writing Quiz |  ![screenshot](documentation/wireframes/wireframesmobilefreewritingquiz.png)  | 
+| Picture Based Quiz |  ![screenshot](documentation/wireframes/wireframesmobilepicturebasedquiz.png)  | 
+| Quiz Creator|  ![screenshot](documentation/wireframes/wireframesmobilequizcreator.png)  | 
+| Multiple Choice Creator |  ![screenshot](documentation/wireframes/wireframesmobilequizcreatormultiplechoice.png)  | 
+| Free Writing Creator|  ![screenshot](documentation/wireframes/wireframesmobilequizcreatorfreewriting.png)  |
+| Picture Based Creator|  ![screenshot](documentation/wireframes/wireframesmobilequizcreatorpicturebased.png)  | 
+
+
 ## Data Storage
 
 The Quizulu App utilizes SQLite for efficient data storage and management. Here's how the data is organized and utilized within the app:
