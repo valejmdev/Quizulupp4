@@ -53,7 +53,7 @@ def profile(request):
         if 'delete' in request.POST:
             request.user.delete()
             messages.success(request, 'Your profile has been deleted.')
-            return redirect('home')
+            return redirect('quiz-index')
 
     else:
         u_form = UserUpdateForm(instance=request.user)
